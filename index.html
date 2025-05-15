@@ -3,126 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aminul Islam | Portfolio</title>
+  <title>Aminul Islam - Portfolio</title>
+  <!-- Font Awesome CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <button id="mode-toggle">Toggle Dark Mode</button>
-    <header>
-      <h1>Aminul Islam</h1>
-      <div class="contact">
-        <a href="mailto:aminul.edu123@gmail.com" title="Email">aminul.edu123@gmail.com</a>
-        <a href="https://www.linkedin.com/in/aymon123" target="_blank" rel="noopener noreferrer" title="LinkedIn">linkedin.com/in/aymon123</a>
-        <a href="https://github.com/Aminul-Islam4" target="_blank" rel="noopener noreferrer" title="GitHub">github.com/Aminul-Islam4</a>
-        <span title="Location">West Rampura, Dhaka-1219</span>
-      </div>
-    </header>
+  <header>
+    <h1>Aminul Islam</h1>
+    <button id="mode-toggle" aria-label="Toggle dark mode">Switch to Dark Mode</button>
+  </header>
 
-    <section id="summary">
-      <h2>Summary</h2>
-      <p>
-        Computer Science graduate (final defense pending) from <strong>BRAC University</strong> with experience in machine learning and AI-powered applications. Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and Hugging Face Transformers. Passionate about solving real-world problems through data-driven solutions and quick to adapt to new technologies.
-      </p>
-    </section>
+  <section class="contact">
+    <a href="mailto:aminul.edu123@gmail.com" aria-label="Email">
+      <i class="fas fa-envelope"></i> aminul.edu123@gmail.com
+    </a>
+    <a href="https://linkedin.com/in/aymon123" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i> linkedin.com/in/aymon123
+    </a>
+    <a href="https://github.com/Aminul-Islam4" target="_blank" rel="noopener" aria-label="GitHub">
+      <i class="fab fa-github"></i> github.com/Aminul-Islam4
+    </a>
+    <span aria-label="Location">
+      <i class="fas fa-map-marker-alt"></i> West Rampura, Dhaka-1219
+    </span>
+  </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>BRAC University</strong> — Bachelor of Science in Computer Science <em>(2020 – May 2025)</em></li>
-        <li><strong>Dhaka Imperial College</strong> — Higher Secondary Certificate (Science) <em>(2017 – 2019)</em></li>
-        <li><strong>National Ideal School</strong> — Secondary School Certificate (Science) <em>(2016 – 2017)</em></li>
-      </ul>
-    </section>
+  <section class="summary">
+    <h2>Summary</h2>
+    <p>
+      Computer Science graduate (final defense pending) from <strong>BRAC University</strong> with
+      experience in machine learning and AI-powered applications. Proficient in Python, data
+      structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras,
+      Scikit-learn, Matplotlib, and Hugging Face Transformers. Passionate about solving
+      real-world problems through data-driven solutions and quick to adapt to new
+      technologies.
+    </p>
+  </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
+  <section class="education">
+    <h2>Education</h2>
+    <ul>
+      <li>
+        <strong>BRAC University</strong> <span>2020 – May 2025</span><br />
+        Bachelor of Science in Computer Science
+      </li>
+      <li>
+        <strong>Dhaka Imperial College</strong> <span>2017 – 2019</span><br />
+        Higher Secondary Certificate (Science)
+      </li>
+      <li>
+        <strong>National Ideal School</strong> <span>2016 – 2017</span><br />
+        Secondary School Certificate (Science)
+      </li>
+    </ul>
+  </section>
 
+  <section class="projects">
+    <h2>Projects</h2>
+
+    <article>
       <h3>AI-Powered Academic Assessment Portal with Performance Tracking</h3>
       <ul>
-        <li>Developed an AI-driven academic self-assessment platform by integrating pre-trained <strong>mT5</strong> and <strong>Bangla Sentence Transformer</strong> models using Hugging Face Transformers.</li>
+        <li>
+          Developed an AI-driven academic self-assessment platform by integrating pre-trained
+          <strong>mT5</strong> and <strong>Bangla Sentence Transformer</strong> models using Hugging Face Transformers.
+        </li>
       </ul>
       <p><em>Technical Stack: Python, mT5, Sentence Transformer, PyTorch, Pandas</em></p>
+    </article>
 
+    <article>
       <h3>Image Classification using ResNet-18 and Transfer Learning for Plant Disease Detection</h3>
       <ul>
-        <li>Developed a plant disease detection model using ResNet-18 with transfer learning, achieving high accuracy and enabling custom image prediction.</li>
+        <li>
+          Developed a plant disease detection model using ResNet-18 with transfer learning, achieving high accuracy and enabling custom image prediction.
+        </li>
       </ul>
       <p><em>Technical Stack: PyTorch, torchvision, Google Colab, Python, Transfer Learning, Matplotlib</em></p>
+    </article>
 
+    <article>
       <h3>Online Payment Fraud Detection System</h3>
       <ul>
         <li>Built a fraud detection system using Logistic Regression, Naive Bayes, and KNN classifiers.</li>
         <li>Achieved 99% accuracy with KNN and evaluated model metrics with F1-score.</li>
       </ul>
       <p><em>Technical Stack: Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn</em></p>
+    </article>
 
+    <article>
       <h3>Bug Tracking and Management System</h3>
       <ul>
         <li>Developed a role-based bug tracking web application with admin and user functionalities.</li>
       </ul>
       <p><em>Technical Stack: HTML, CSS, PHP, MySQL</em></p>
+    </article>
 
+    <article>
       <h3>Dijkstra’s Algorithm for Shortest Path Calculation</h3>
       <ul>
         <li>Developed a Python program for shortest path calculation with Dijkstra’s Algorithm.</li>
       </ul>
       <p><em>Technical Stack: Python, Dijkstra’s Algorithm, python-docx, Google Colab</em></p>
+    </article>
 
+    <article>
       <h3>Automatic Seed Sowing Robot</h3>
       <ul>
         <li>Designed an autonomous robot for seed sowing with obstacle avoidance and water dispersion.</li>
       </ul>
       <p><em>Technical Stack: C++, Arduino, IR Sensor, Ultrasonic Sensor, Servo Motor, Water Pump</em></p>
-    </section>
+    </article>
+  </section>
 
-    <section id="research">
-      <h2>Research Experience</h2>
-      <ul>
-        <li>
-          <strong>Comparative Analysis of CNN and RNN for Bangla Handwritten Character Recognition</strong><br />
-          Presented at the 3rd International Conference on Artificial Intelligence and Machine Learning Applications (AIMLA 2025), in association with IEEE and East Carolina University, USA.
-        </li>
-      </ul>
-    </section>
+  <section class="research">
+    <h2>Research Experience</h2>
+    <p>
+      <strong>Comparative Analysis of CNN and RNN for Bangla Handwritten Character Recognition</strong><br />
+      Presented in the 3rd International Conference on Artificial Intelligence and Machine Learning Applications (AIMLA 2025) in association with IEEE and East Carolina University, USA.
+    </p>
+  </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills-list">
-        <span>Python</span>
-        <span>JavaScript</span>
-        <span>PHP</span>
-        <span>Scikit-learn</span>
-        <span>TensorFlow</span>
-        <span>PyTorch</span>
-        <span>Pandas</span>
-        <span>NumPy</span>
-        <span>MySQL</span>
-        <span>SQL</span>
-        <span>Git</span>
-        <span>GitHub</span>
-        <span>Data Structures</span>
-        <span>Algorithms</span>
-        <span>OOP</span>
-      </div>
-    </section>
+  <section class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Programming:</strong> Python, JavaScript, PHP</li>
+      <li><strong>ML/Data Science:</strong> Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy</li>
+      <li><strong>Database:</strong> MySQL, SQL</li>
+      <li><strong>Version Control:</strong> Git, GitHub</li>
+      <li><strong>Other Expertise:</strong> Data Structures, Algorithms, OOP</li>
+    </ul>
+  </section>
 
-    <section id="competencies">
-      <h2>Core Competencies</h2>
-      <div class="competencies-list">
-        <span>Critical Thinking</span>
-        <span>Adaptability</span>
-        <span>Debugging &amp; Troubleshooting</span>
-        <span>Technical Expertise</span>
-      </div>
-    </section>
-  </div>
+  <section class="competencies">
+    <h2>Core Competencies</h2>
+    <ul>
+      <li><strong>Critical Thinking:</strong> Solves complex problems efficiently and logically.</li>
+      <li><strong>Adaptability:</strong> Quickly adopts new tools and responds to feedback.</li>
+      <li><strong>Debugging &amp; Troubleshooting:</strong> Identifies and resolves issues effectively.</li>
+      <li><strong>Technical Expertise:</strong> Develops impactful, optimized solutions.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Aminul Islam</p>
+  </footer>
 
   <script>
-    const toggleButton = document.getElementById('mode-toggle');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+    const toggleBtn = document.getElementById('mode-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      if (document.body.classList.contains('dark')) {
+        toggleBtn.textContent = 'Switch to Light Mode';
+      } else {
+        toggleBtn.textContent = 'Switch to Dark Mode';
+      }
     });
   </script>
 </body>
