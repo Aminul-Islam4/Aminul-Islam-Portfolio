@@ -1,124 +1,118 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aminul Islam | Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer>
+    // Dark Mode Toggle Script
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
-
-  <!-- Toggle Dark Mode -->
-  <div class="flex justify-end p-4">
-    <button onclick="document.documentElement.classList.toggle('dark')" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded shadow">
-      Toggle Dark Mode
-    </button>
-  </div>
-
-  <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
-
-    <!-- Header -->
-    <header class="text-center space-y-2">
-      <h1 class="text-4xl font-bold">Aminul Islam</h1>
-      <p class="text-gray-500 dark:text-gray-400">Computer Science Graduate (Final Defense Pending)</p>
-      <div class="flex justify-center gap-4 text-lg flex-wrap">
-        <a href="mailto:aminul.edu123@gmail.com" class="hover:underline">📧 Email</a>
+<body>
+  <header>
+    <div class="container">
+      <h1>Aminul Islam</h1>
+      <p class="email">📧 aminul.edu123@gmail.com</p>
+      <p class="address">📍 West Rampura, Dhaka-1219</p>
+      <p class="socials">
         <a href="https://linkedin.com/in/aymon123" target="_blank">🔗 LinkedIn</a>
         <a href="https://github.com/Aminul-Islam4" target="_blank">💻 GitHub</a>
-        <span>📍 Dhaka, Bangladesh</span>
-      </div>
-    </header>
+      </p>
+      <button onclick="toggleDarkMode()" class="toggle-button">Toggle Dark Mode</button>
+    </div>
+  </header>
 
-    <!-- Summary -->
-    <section>
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Summary</h2>
+  <main class="container">
+    <section class="summary">
+      <h2>Summary</h2>
       <p>
-        Computer Science graduate (final defense pending) from BRAC University with experience in
-        machine learning and AI-powered applications. Proficient in Python, data structures, algorithms,
-        and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and
-        Hugging Face Transformers. Passionate about solving real-world problems through data-driven
-        solutions and quick to adapt to new technologies.
+        Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications. Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and Hugging Face Transformers. Passionate about solving real-world problems through data-driven solutions and quick to adapt to new technologies.
       </p>
     </section>
 
-    <!-- Education -->
-    <section>
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Education</h2>
-      <div class="space-y-4">
+    <section class="education">
+      <h2>Education</h2>
+      <div class="edu-item">
         <div>
-          <h3 class="font-semibold">BRAC University <span class="float-right">2020 – May 2025</span></h3>
-          <p>B.Sc. in Computer Science</p>
+          <h3>BRAC University</h3>
+          <p>Bachelor of Science in Computer Science</p>
         </div>
+        <span>2020 – May 2025</span>
+      </div>
+      <div class="edu-item">
         <div>
-          <h3 class="font-semibold">Dhaka Imperial College <span class="float-right">2017 – 2019</span></h3>
+          <h3>Dhaka Imperial College</h3>
           <p>Higher Secondary Certificate (Science)</p>
         </div>
+        <span>2017 – 2019</span>
+      </div>
+      <div class="edu-item">
         <div>
-          <h3 class="font-semibold">National Ideal School <span class="float-right">2016 – 2017</span></h3>
+          <h3>National Ideal School</h3>
           <p>Secondary School Certificate (Science)</p>
         </div>
+        <span>2016 – 2017</span>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section>
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Projects</h2>
-      <ul class="space-y-4 list-disc list-inside">
+    <section class="projects">
+      <h2>Projects</h2>
+      <ul>
         <li>
-          <strong>AI-Powered Academic Assessment Portal:</strong>
-          mT5 & Bangla Sentence Transformer-based self-assessment system.
+          <strong>AI-Powered Academic Assessment Portal</strong> — Integrated pre-trained mT5 and Bangla Sentence Transformer models.
+          <br/><em>Stack:</em> Python, mT5, PyTorch, Transformers
         </li>
         <li>
-          <strong>Plant Disease Detection with ResNet-18:</strong>
-          CNN with transfer learning to detect crop diseases.
+          <strong>Plant Disease Detection</strong> — ResNet-18 with transfer learning and image prediction.
+          <br/><em>Stack:</em> PyTorch, Colab, Matplotlib
         </li>
         <li>
-          <strong>Online Payment Fraud Detection:</strong>
-          Logistic Regression, Naive Bayes, KNN for detecting anomalies.
+          <strong>Online Payment Fraud Detection</strong> — Logistic Regression, Naive Bayes, KNN.
+          <br/><em>Stack:</em> Python, Scikit-learn, Seaborn
         </li>
         <li>
-          <strong>Bug Tracking System:</strong>
-          PHP/MySQL project for managing software bugs and teams.
+          <strong>Bug Tracking System</strong> — Role-based web app with admin/user features.
+          <br/><em>Stack:</em> HTML, CSS, PHP, MySQL
         </li>
         <li>
-          <strong>Dijkstra’s Algorithm Tool:</strong>
-          Built using Python and python-docx.
+          <strong>Dijkstra’s Algorithm Tool</strong> — Shortest path calculator.
+          <br/><em>Stack:</em> Python, Google Colab, python-docx
         </li>
         <li>
-          <strong>Automatic Seed Sowing Robot:</strong>
-          Arduino + sensors for agricultural automation.
+          <strong>Automatic Seed Sowing Robot</strong> — Obstacle detection and irrigation.
+          <br/><em>Stack:</em> C++, Arduino, Servo Motor, IR Sensor
         </li>
       </ul>
     </section>
 
-    <!-- Skills -->
-    <section>
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Skills</h2>
-      <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-        <li>Python</li><li>JavaScript</li><li>PHP</li>
-        <li>TensorFlow</li><li>PyTorch</li><li>Scikit-learn</li>
-        <li>Pandas</li><li>NumPy</li><li>MySQL</li>
-        <li>Git & GitHub</li><li>OOP</li><li>Data Structures</li>
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Programming:</strong> Python, JavaScript, PHP</li>
+        <li><strong>ML/Data Science:</strong> Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy</li>
+        <li><strong>Database:</strong> MySQL, SQL</li>
+        <li><strong>Version Control:</strong> Git, GitHub</li>
+        <li><strong>Other:</strong> Data Structures, Algorithms, OOP</li>
       </ul>
     </section>
 
-    <!-- Core Competencies -->
-    <section>
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Core Competencies</h2>
-      <ul class="list-disc list-inside space-y-1">
-        <li>Critical Thinking: Solves complex problems efficiently and logically.</li>
-        <li>Adaptability: Quickly adopts new tools and responds to feedback.</li>
-        <li>Debugging & Troubleshooting: Identifies and resolves issues effectively.</li>
-        <li>Technical Expertise: Develops impactful, optimized solutions.</li>
+    <section class="competencies">
+      <h2>Core Competencies</h2>
+      <ul>
+        <li><strong>Critical Thinking:</strong> Solves complex problems efficiently.</li>
+        <li><strong>Adaptability:</strong> Adapts to new tools and feedback quickly.</li>
+        <li><strong>Debugging:</strong> Identifies and resolves technical issues.</li>
+        <li><strong>Technical Expertise:</strong> Delivers optimized and impactful solutions.</li>
       </ul>
     </section>
-
-    <!-- Footer -->
-    <footer class="pt-10 border-t mt-10 text-sm text-center text-gray-500 dark:text-gray-400">
-      &copy; 2025 Aminul Islam. All rights reserved.
-    </footer>
-
   </main>
 
+  <footer class="container">
+    <p>© 2025 Aminul Islam. All rights reserved.</p>
+  </footer>
 </body>
 </html>
