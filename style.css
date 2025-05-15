@@ -1,97 +1,118 @@
-/* Base styling */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f9;
-  color: #222;
+/* Reset some basics */
+* {
+  box-sizing: border-box;
   margin: 0;
-  padding: 0 1rem;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body and container */
+body {
+  background-color: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 20px;
 }
 
 .container {
   max-width: 900px;
-  margin: 2rem auto 3rem;
-  background: white;
-  padding: 2rem 2.5rem;
-  border-radius: 8px;
+  margin: auto;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Header */
 header {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #222;
 }
 
-#mode-toggle {
-  font-size: 1.5rem;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-#mode-toggle:hover {
-  background-color: #ddd;
-}
-
-/* Contact */
 .contact {
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-  color: #555;
+  font-size: 0.95rem;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .contact a {
-  color: #0077b5;
+  color: #1976d2;
   text-decoration: none;
-  margin: 0 0.2rem;
+  transition: color 0.2s ease;
 }
 
 .contact a:hover {
   text-decoration: underline;
+  color: #0d47a1;
 }
 
-/* Section titles */
+/* Sections */
+section {
+  margin-bottom: 30px;
+}
+
 h2 {
-  border-bottom: 3px solid #0077b5;
-  padding-bottom: 0.25rem;
-  margin-bottom: 0.75rem;
-  color: #0077b5;
-  font-weight: 600;
+  font-size: 1.8rem;
+  color: #1976d2;
+  border-bottom: 3px solid #1976d2;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
-/* Lists */
 ul {
-  padding-left: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: #333;
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
 li {
-  margin-bottom: 0.7rem;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1rem;
+}
+
+em {
+  font-style: italic;
+  color: #555;
+}
+
+/* Skills & Core Competencies */
+.skills-list, .competencies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+  color: #333;
+}
+
+.skills-list span, .competencies-list span {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  font-size: 0.85rem;
-  color: #777;
-  margin-top: 2rem;
-  border-top: 1px solid #ddd;
-  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 35px;
+  user-select: none;
 }
 
 /* Dark Mode */
@@ -107,7 +128,14 @@ body.dark-mode .container {
 
 body.dark-mode header h1,
 body.dark-mode h2 {
-  color: #66aaff;
+  color: #90caf9;  /* lighter blue for headings */
+  font-weight: 700;
+}
+
+body.dark-mode section ul,
+body.dark-mode section p,
+body.dark-mode section li {
+  color: #ccc; /* lighter text for better contrast */
 }
 
 body.dark-mode .contact {
@@ -115,7 +143,7 @@ body.dark-mode .contact {
 }
 
 body.dark-mode .contact a {
-  color: #66aaff;
+  color: #90caf9;
 }
 
 body.dark-mode .contact a:hover {
@@ -126,8 +154,22 @@ body.dark-mode footer {
   color: #aaa;
 }
 
-body.dark-mode #mode-toggle:hover {
-  background-color: #333;
+/* Toggle Button */
+#mode-toggle {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  margin-bottom: 25px;
+}
+
+#mode-toggle:hover {
+  background-color: #1565c0;
 }
 
 /* Responsive */
@@ -136,8 +178,9 @@ body.dark-mode #mode-toggle:hover {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  #mode-toggle {
-    margin-top: 0.5rem;
+  .contact {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 15px;
   }
 }
