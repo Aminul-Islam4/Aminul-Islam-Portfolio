@@ -2,236 +2,123 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aminul Islam | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Custom scrollbar styling */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background-color: rgba(100, 100, 100, 0.5);
-      border-radius: 10px;
-    }
-  </style>
-  <script>
-    // Dark mode toggle function
-    function toggleDarkMode() {
-      const html = document.documentElement;
-      if (html.classList.contains("dark")) {
-        html.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      } else {
-        html.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      }
-    }
-
-    // On page load: set theme based on saved preference or system preference
-    window.onload = () => {
-      if (
-        localStorage.getItem("theme") === "dark" ||
-        (!localStorage.getItem("theme") &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    };
-  </script>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500 min-h-screen flex flex-col">
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
 
-  <main class="flex-grow max-w-4xl mx-auto px-6 py-8 sm:px-10 sm:py-12">
+  <!-- Toggle Dark Mode -->
+  <div class="flex justify-end p-4">
+    <button onclick="document.documentElement.classList.toggle('dark')" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded shadow">
+      Toggle Dark Mode
+    </button>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
 
     <!-- Header -->
-    <header class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-10">
-      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 sm:mb-0">
-        Aminul Islam
-      </h1>
-      <button
-        onclick="toggleDarkMode()"
-        aria-label="Toggle Dark Mode"
-        class="self-start sm:self-auto px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-      >
-        Toggle Dark Mode
-      </button>
+    <header class="text-center space-y-2">
+      <h1 class="text-4xl font-bold">Aminul Islam</h1>
+      <p class="text-gray-500 dark:text-gray-400">Computer Science Graduate (Final Defense Pending)</p>
+      <div class="flex justify-center gap-4 text-lg flex-wrap">
+        <a href="mailto:aminul.edu123@gmail.com" class="hover:underline">📧 Email</a>
+        <a href="https://linkedin.com/in/aymon123" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/Aminul-Islam4" target="_blank">💻 GitHub</a>
+        <span>📍 Dhaka, Bangladesh</span>
+      </div>
     </header>
 
-    <!-- Contact info -->
-    <section
-      class="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400 mb-10 justify-center sm:justify-start"
-    >
-      <a href="mailto:aminul.edu123@gmail.com" class="hover:underline break-all"
-        >📧 aminul.edu123@gmail.com</a
-      >
-      <a
-        href="https://linkedin.com/in/aymon123"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hover:underline text-blue-600 dark:text-blue-400"
-        >🔗 linkedin.com/in/aymon123</a
-      >
-      <a
-        href="https://github.com/Aminul-Islam4"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hover:underline text-blue-600 dark:text-blue-400"
-        >💻 github.com/Aminul-Islam4</a
-      >
-      <span>📍 West Rampura, Dhaka-1219</span>
-    </section>
-
     <!-- Summary -->
-    <section class="mb-12">
-      <h2
-        class="text-xl sm:text-2xl font-semibold border-b border-gray-300 dark:border-gray-700 pb-2 mb-5"
-      >
-        Summary
-      </h2>
-      <p class="leading-relaxed text-base sm:text-lg max-w-3xl">
-        Computer Science graduate (final defense pending) from BRAC University
-        with experience in machine learning and AI-powered applications.
-        Proficient in Python, data structures, algorithms, and OOP, with hands-on
-        skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and
-        Hugging Face Transformers. Passionate about solving real-world problems
-        through data-driven solutions and quick to adapt to new technologies.
+    <section>
+      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Summary</h2>
+      <p>
+        Computer Science graduate (final defense pending) from BRAC University with experience in
+        machine learning and AI-powered applications. Proficient in Python, data structures, algorithms,
+        and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and
+        Hugging Face Transformers. Passionate about solving real-world problems through data-driven
+        solutions and quick to adapt to new technologies.
       </p>
     </section>
 
     <!-- Education -->
-    <section class="mb-12">
-      <h2
-        class="text-xl sm:text-2xl font-semibold border-b border-gray-300 dark:border-gray-700 pb-2 mb-7"
-      >
-        Education
-      </h2>
-      <ul class="space-y-7 max-w-3xl">
-        <li class="flex justify-between flex-wrap">
-          <div>
-            <h3 class="font-bold text-lg">BRAC University</h3>
-            <p class="italic">Bachelor of Science in Computer Science</p>
-          </div>
-          <span
-            class="text-gray-500 dark:text-gray-400 whitespace-nowrap sm:text-sm text-xs mt-1 sm:mt-0"
-            >2020 – May 2025</span
-          >
-        </li>
-        <li class="flex justify-between flex-wrap">
-          <div>
-            <h3 class="font-bold text-lg">Dhaka Imperial College</h3>
-            <p class="italic">Higher Secondary Certificate (Science)</p>
-          </div>
-          <span
-            class="text-gray-500 dark:text-gray-400 whitespace-nowrap sm:text-sm text-xs mt-1 sm:mt-0"
-            >2017 – 2019</span
-          >
-        </li>
-        <li class="flex justify-between flex-wrap">
-          <div>
-            <h3 class="font-bold text-lg">National Ideal School</h3>
-            <p class="italic">Secondary School Certificate (Science)</p>
-          </div>
-          <span
-            class="text-gray-500 dark:text-gray-400 whitespace-nowrap sm:text-sm text-xs mt-1 sm:mt-0"
-            >2016 – 2017</span
-          >
-        </li>
-      </ul>
+    <section>
+      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Education</h2>
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-semibold">BRAC University <span class="float-right">2020 – May 2025</span></h3>
+          <p>B.Sc. in Computer Science</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">Dhaka Imperial College <span class="float-right">2017 – 2019</span></h3>
+          <p>Higher Secondary Certificate (Science)</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">National Ideal School <span class="float-right">2016 – 2017</span></h3>
+          <p>Secondary School Certificate (Science)</p>
+        </div>
+      </div>
     </section>
 
     <!-- Projects -->
-    <section class="mb-12">
-      <h2
-        class="text-xl sm:text-2xl font-semibold border-b border-gray-300 dark:border-gray-700 pb-2 mb-7"
-      >
-        Projects
-      </h2>
-      <ul class="space-y-10 max-w-4xl">
+    <section>
+      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Projects</h2>
+      <ul class="space-y-4 list-disc list-inside">
         <li>
-          <h3 class="text-lg font-semibold">AI-Powered Academic Assessment Portal</h3>
-          <p class="mt-2 max-w-3xl">
-            Developed an AI-driven self-assessment platform using pre-trained mT5
-            and Bangla Sentence Transformer models from Hugging Face Transformers.
-          </p>
-          <p
-            class="italic text-sm mt-1 text-gray-600 dark:text-gray-400 max-w-3xl"
-          >
-            Tech: Python, mT5, PyTorch, Transformers, Pandas
-          </p>
+          <strong>AI-Powered Academic Assessment Portal:</strong>
+          mT5 & Bangla Sentence Transformer-based self-assessment system.
         </li>
         <li>
-          <h3 class="text-lg font-semibold">Plant Disease Detection with ResNet-18</h3>
-          <p class="mt-2 max-w-3xl">
-            Developed a transfer learning model using ResNet-18 for accurate plant
-            disease detection with custom image prediction.
-          </p>
-          <p
-            class="italic text-sm mt-1 text-gray-600 dark:text-gray-400 max-w-3xl"
-          >
-            Tech: PyTorch, Google Colab, Matplotlib, Transfer Learning
-          </p>
+          <strong>Plant Disease Detection with ResNet-18:</strong>
+          CNN with transfer learning to detect crop diseases.
         </li>
         <li>
-          <h3 class="text-lg font-semibold">Online Payment Fraud Detection System</h3>
-          <p class="mt-2 max-w-3xl">
-            Built fraud detection system with Logistic Regression, Naive Bayes,
-            and KNN classifiers achieving 99% accuracy using KNN.
-          </p>
-          <p
-            class="italic text-sm mt-1 text-gray-600 dark:text-gray-400 max-w-3xl"
-          >
-            Tech: Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
-          </p>
+          <strong>Online Payment Fraud Detection:</strong>
+          Logistic Regression, Naive Bayes, KNN for detecting anomalies.
         </li>
         <li>
-          <h3 class="text-lg font-semibold">Bug Tracking and Management System</h3>
-          <p class="mt-2 max-w-3xl">
-            Created a role-based bug tracking web app with admin and user roles
-            for issue reporting and management.
-          </p>
-          <p
-            class="italic text-sm mt-1 text-gray-600 dark:text-gray-400 max-w-3xl"
-          >
-            Tech: HTML, CSS, PHP, MySQL
-          </p>
+          <strong>Bug Tracking System:</strong>
+          PHP/MySQL project for managing software bugs and teams.
         </li>
         <li>
-          <h3 class="text-lg font-semibold">Dijkstra’s Algorithm Tool</h3>
-          <p class="mt-2 max-w-3xl">
-            Implemented a shortest path calculator using Dijkstra’s Algorithm for
-            dynamic city data.
-          </p>
-          <p
-            class="italic text-sm mt-1 text-gray-600 dark:text-gray-400 max-w-3xl"
-          >
-            Tech: Python, python-docx, Google Colab
-          </p>
+          <strong>Dijkstra’s Algorithm Tool:</strong>
+          Built using Python and python-docx.
         </li>
         <li>
-          <h3 class="text-lg font-semibold">Automatic Seed Sowing Robot</h3>
-          <p class="mt-2 max-w-3xl">
-            Designed autonomous robot with obstacle avoidance and water dispersion
-            features using Arduino.
-          </p>
-          <p
-            class="italic text-sm mt-1 text-gray-600 dark:text-gray-400 max-w-3xl"
-          >
-            Tech: Arduino, IR Sensors, Ultrasonic Sensor, DC Motors
-          </p>
+          <strong>Automatic Seed Sowing Robot:</strong>
+          Arduino + sensors for agricultural automation.
         </li>
       </ul>
     </section>
 
-    <!-- References -->
+    <!-- Skills -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Skills</h2>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+        <li>Python</li><li>JavaScript</li><li>PHP</li>
+        <li>TensorFlow</li><li>PyTorch</li><li>Scikit-learn</li>
+        <li>Pandas</li><li>NumPy</li><li>MySQL</li>
+        <li>Git & GitHub</li><li>OOP</li><li>Data Structures</li>
+      </ul>
+    </section>
+
+    <!-- Core Competencies -->
+    <section>
+      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Core Competencies</h2>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Critical Thinking: Solves complex problems efficiently and logically.</li>
+        <li>Adaptability: Quickly adopts new tools and responds to feedback.</li>
+        <li>Debugging & Troubleshooting: Identifies and resolves issues effectively.</li>
+        <li>Technical Expertise: Develops impactful, optimized solutions.</li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-10 border-t mt-10 text-sm text-center text-gray-500 dark:text-gray-400">
+      &copy; 2025 Aminul Islam. All rights reserved.
+    </footer>
 
   </main>
-
-  <footer class="text-center text-gray-500 dark:text-gray-400 p-4 border-t border-gray-300 dark:border-gray-700 text-sm">
-    © 2025 Aminul Islam. All rights reserved.
-  </footer>
 
 </body>
 </html>
