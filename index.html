@@ -1,134 +1,107 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aminul Islam - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Enable dark mode toggle
-    function toggleDarkMode() {
+    function toggleTheme() {
       document.documentElement.classList.toggle('dark');
     }
   </script>
 </head>
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white font-sans transition-colors duration-300">
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-all duration-300">
 
-  <header class="p-6 text-center border-b border-gray-200 dark:border-gray-700">
-    <h1 class="text-4xl font-bold">Aminul Islam</h1>
-    <p class="text-sm text-gray-600 dark:text-gray-400">Computer Science Graduate | Machine Learning Enthusiast</p>
-    <div class="flex justify-center gap-4 mt-4">
-      <a href="mailto:aminul.edu123@gmail.com" title="Email">
-        <img src="https://img.icons8.com/ios-filled/24/000000/email.png" alt="email" class="dark:invert">
-      </a>
-      <a href="https://www.linkedin.com/in/aymon123" target="_blank" title="LinkedIn">
-        <img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" alt="linkedin" class="dark:invert">
-      </a>
-      <a href="https://github.com/Aminul-Islam4" target="_blank" title="GitHub">
-        <img src="https://img.icons8.com/ios-filled/24/000000/github.png" alt="github" class="dark:invert">
-      </a>
-      <a href="#" title="Location">
-        <img src="https://img.icons8.com/ios-filled/24/000000/marker.png" alt="location" class="dark:invert">
-      </a>
-      <button onclick="toggleDarkMode()" title="Toggle Theme">
-        <img src="https://img.icons8.com/ios-filled/24/000000/moon-symbol.png" alt="toggle" class="dark:invert">
-      </button>
+  <div class="max-w-4xl mx-auto px-4 py-6">
+    <!-- Header -->
+    <div class="flex justify-between items-center">
+      <h1 class="text-3xl font-bold">Aminul Islam</h1>
+      <button onclick="toggleTheme()" class="text-sm bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded">Toggle Theme</button>
     </div>
-  </header>
 
-  <main class="p-6 max-w-5xl mx-auto space-y-10">
+    <!-- Contact Info -->
+    <div class="flex items-center space-x-4 mt-2 text-sm">
+      <span>📍 Dhaka, Bangladesh</span>
+      <a href="mailto:your.email@example.com" class="hover:underline">✉️ Email</a>
+      <a href="https://github.com/yourgithub" target="_blank">💻 GitHub</a>
+      <a href="https://linkedin.com/in/yourlinkedin" target="_blank">🔗 LinkedIn</a>
+    </div>
 
-    <section>
-      <h2 class="text-2xl font-semibold border-b border-gray-300 pb-2 mb-4 dark:border-gray-600">Summary</h2>
-      <p>
-        Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications.
-        Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib,
-        and Hugging Face Transformers. Passionate about solving real-world problems through data-driven solutions and quick to adapt to new technologies.
+    <!-- Summary -->
+    <section class="mt-6">
+      <h2 class="text-xl font-semibold border-b border-gray-400 dark:border-gray-600 pb-1">Summary</h2>
+      <p class="mt-2 text-justify">
+        Computer Science graduate with a strong foundation in Python, data structures, and algorithms. Skilled in machine learning, full-stack development, and real-world software engineering. Passionate about building intelligent systems and solving complex problems.
       </p>
     </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Education</h2>
-      <div class="space-y-4">
+    <!-- Education -->
+    <section class="mt-6">
+      <h2 class="text-xl font-semibold border-b border-gray-400 dark:border-gray-600 pb-1">Education</h2>
+      <div class="space-y-3 mt-3">
         <div class="flex justify-between">
-          <span><strong>BRAC University</strong></span>
-          <span class="text-sm text-gray-600 dark:text-gray-400">2020 – May 2025</span>
+          <div>
+            <strong>BRAC University</strong> – B.Sc. in Computer Science and Engineering
+          </div>
+          <div class="text-sm">Graduated 2025</div>
         </div>
         <div class="flex justify-between">
-          <span><strong>Dhaka Imperial College</strong></span>
-          <span class="text-sm text-gray-600 dark:text-gray-400">2017 – 2019</span>
+          <div>
+            <strong>Dhaka Imperial College</strong> – Higher Secondary Certificate (Science)
+          </div>
+          <div class="text-sm">2020</div>
         </div>
         <div class="flex justify-between">
-          <span><strong>National Ideal School</strong></span>
-          <span class="text-sm text-gray-600 dark:text-gray-400">2016 – 2017</span>
+          <div>
+            <strong>National Ideal School</strong> – Secondary School Certificate (Science)
+          </div>
+          <div class="text-sm">2018</div>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Projects</h2>
-      <ul class="space-y-4">
-        <li>
-          <strong>AI-Powered Academic Assessment Portal</strong> — Built using mT5 and Bangla Sentence Transformer.<br/>
-          <em class="text-sm text-gray-500">Python, mT5, Sentence Transformer, PyTorch, Pandas</em>
-        </li>
-        <li>
-          <strong>Plant Disease Detection with ResNet-18</strong> — Used transfer learning for high-accuracy classification.<br/>
-          <em class="text-sm text-gray-500">PyTorch, torchvision, Google Colab, Python, Transfer Learning</em>
-        </li>
-        <li>
-          <strong>Online Payment Fraud Detection System</strong> — Achieved 99% accuracy using KNN.<br/>
-          <em class="text-sm text-gray-500">Python, Scikit-learn, Pandas, NumPy</em>
-        </li>
-        <li>
-          <strong>Bug Tracking System</strong> — Role-based web application for admin/user bug reporting.<br/>
-          <em class="text-sm text-gray-500">HTML, CSS, PHP, MySQL</em>
-        </li>
-        <li>
-          <strong>Dijkstra’s Algorithm Tool</strong> — Shortest path calculation tool using `.docx` input.<br/>
-          <em class="text-sm text-gray-500">Python, Dijkstra, python-docx</em>
-        </li>
-        <li>
-          <strong>Automatic Seed Sowing Robot</strong> — Arduino-based robot for seed sowing and water dispensing.<br/>
-          <em class="text-sm text-gray-500">C++, Arduino, IR Sensor, Servo Motor</em>
-        </li>
+    <!-- Projects -->
+    <section class="mt-6">
+      <h2 class="text-xl font-semibold border-b border-gray-400 dark:border-gray-600 pb-1">Projects</h2>
+      <ul class="list-disc ml-6 mt-2 space-y-1">
+        <li>AI-powered academic portal using Django, React, and mT5</li>
+        <li>Plant disease detection with CNN in PyTorch</li>
+        <li>Dijkstra's Algorithm route finding tool</li>
+        <li>Fraud detection system using ML</li>
+        <li>Arduino-based automatic seed sowing robot</li>
       </ul>
     </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Research</h2>
-      <p>
-        <strong>Comparative Analysis of CNN and RNN for Bangla Handwritten Character Recognition</strong><br/>
-        Presented at the 3rd AIMLA 2025 in association with IEEE and East Carolina University, USA.
+    <!-- Core Competencies -->
+    <section class="mt-6">
+      <h2 class="text-xl font-semibold border-b border-gray-400 dark:border-gray-600 pb-1">Core Competencies</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2 text-sm">
+        <span>Python</span>
+        <span>SQL</span>
+        <span>OOP</span>
+        <span>Machine Learning</span>
+        <span>React</span>
+        <span>Django</span>
+        <span>Git</span>
+        <span>Data Structures</span>
+        <span>Algorithms</span>
+        <span>PyTorch</span>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="mt-6">
+      <h2 class="text-xl font-semibold border-b border-gray-400 dark:border-gray-600 pb-1">Research</h2>
+      <p class="mt-2">
+        Conducted research on Bangla handwritten text recognition using CNN and RNN models. Worked on “Point-Cloud-based 3D Object Detection for Autonomous Navigation in UGVs” and submitted under LNCS format.
       </p>
     </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Skills</h2>
-      <ul class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm list-disc pl-5">
-        <li>Python, JavaScript, PHP</li>
-        <li>TensorFlow, PyTorch, Scikit-learn</li>
-        <li>SQL, MySQL</li>
-        <li>Data Structures & Algorithms</li>
-        <li>Git, GitHub</li>
-        <li>Hugging Face Transformers</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Core Competencies</h2>
-      <ul class="list-disc pl-5 space-y-1 text-sm">
-        <li>Critical Thinking: Solves complex problems efficiently.</li>
-        <li>Adaptability: Quick to adopt tools & respond to feedback.</li>
-        <li>Debugging: Efficient issue identification and resolution.</li>
-        <li>Technical Expertise: Builds optimized, real-world solutions.</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="text-center text-xs text-gray-500 dark:text-gray-400 py-4 border-t border-gray-200 dark:border-gray-700">
-    &copy; 2025 Aminul Islam. Built with ❤️ using Tailwind CSS.
-  </footer>
-
+    <!-- Footer -->
+    <footer class="text-center text-xs text-gray-500 dark:text-gray-400 mt-8">
+      &copy; 2025 Aminul Islam. All rights reserved.
+    </footer>
+  </div>
 </body>
 </html>
