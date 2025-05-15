@@ -1,4 +1,4 @@
-/* Reset some basics */
+/* Reset and basics */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,6 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body and container */
 body {
   background-color: #f5f5f5;
   color: #222;
@@ -59,6 +58,10 @@ header h1 {
   color: #0d47a1;
 }
 
+.contact span {
+  color: #555;
+}
+
 /* Sections */
 section {
   margin-bottom: 30px;
@@ -71,6 +74,14 @@ h2 {
   padding-bottom: 6px;
   margin-bottom: 15px;
   font-weight: 700;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: #0d47a1;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: 600;
 }
 
 ul {
@@ -87,35 +98,47 @@ li {
 em {
   font-style: italic;
   color: #555;
+  font-size: 0.95rem;
 }
 
 /* Skills & Core Competencies */
 .skills-list, .competencies-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 30px;
-  color: #333;
+  gap: 12px 20px;
 }
 
 .skills-list span, .competencies-list span {
   background-color: #e3f2fd;
   color: #0d47a1;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.95rem;
   font-weight: 600;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 35px;
+  font-size: 0.95rem;
   user-select: none;
+  box-shadow: 0 2px 6px rgba(13, 71, 161, 0.15);
 }
 
-/* Dark Mode */
+/* Toggle button */
+#mode-toggle {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+#mode-toggle:hover {
+  background-color: #0d47a1;
+}
+
+/* Dark mode styles */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
@@ -123,23 +146,15 @@ body.dark-mode {
 
 body.dark-mode .container {
   background-color: #1e1e1e;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  box-shadow: 0 8px 20px rgba(255 255 255 / 0.05);
 }
 
-body.dark-mode header h1,
-body.dark-mode h2 {
-  color: #90caf9;  /* lighter blue for headings */
-  font-weight: 700;
-}
-
-body.dark-mode section ul,
-body.dark-mode section p,
-body.dark-mode section li {
-  color: #ccc; /* lighter text for better contrast */
+body.dark-mode header h1 {
+  color: #bbdefb;
 }
 
 body.dark-mode .contact {
-  color: #bbb;
+  color: #cfd8dc;
 }
 
 body.dark-mode .contact a {
@@ -147,40 +162,25 @@ body.dark-mode .contact a {
 }
 
 body.dark-mode .contact a:hover {
-  text-decoration: underline;
+  color: #e3f2fd;
 }
 
-body.dark-mode footer {
-  color: #aaa;
+body.dark-mode h2 {
+  border-bottom-color: #90caf9;
+  color: #90caf9;
 }
 
-/* Toggle Button */
-#mode-toggle {
-  background-color: #1976d2;
-  color: white;
-  border: none;
-  padding: 8px 18px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
-  margin-bottom: 25px;
+body.dark-mode h3 {
+  color: #64b5f6;
 }
 
-#mode-toggle:hover {
-  background-color: #1565c0;
+body.dark-mode li {
+  color: #ddd;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .contact {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px 15px;
-  }
+body.dark-mode .skills-list span, 
+body.dark-mode .competencies-list span {
+  background-color: #0d47a1;
+  color: #bbdefb;
+  box-shadow: none;
 }
