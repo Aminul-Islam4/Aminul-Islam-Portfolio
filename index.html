@@ -2,177 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aminul Islam | Software Engineer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f6f8;
-      color: #333;
-    }
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 1rem;
-    }
-    header img {
-      width: 130px;
-      border-radius: 10px;
-      border: 2px solid #007acc;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: #007acc;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    section {
-      margin-top: 2rem;
-    }
-    h2 {
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 0.5rem;
-      color: #007acc;
-    }
-    .info p, .project p, .skills p, .research p, .reference p {
-      margin: 0.5rem 0;
-    }
-    .project, .education-entry {
-      margin-bottom: 1.5rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    .tech {
-      font-style: italic;
-      color: #555;
-    }
-    .contact i {
-      margin-right: 8px;
-    }
-    .competency-list li {
-      margin-bottom: 0.5rem;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aminul Islam - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <header>
-      <div>
-        <h1>Aminul Islam</h1>
-        <div class="contact">
-          <p><i class="fa-solid fa-envelope"></i><a href="mailto:aminul.edu123@gmail.com">aminul.edu123@gmail.com</a></p>
-          <p><i class="fa-solid fa-phone"></i>+8801814250265</p>
-          <p><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/aymon123" target="_blank">linkedin.com/in/aymon123</a></p>
-          <p><i class="fab fa-github"></i><a href="https://github.com/Aminul-Islam4" target="_blank">github.com/Aminul-Islam4</a></p>
-          <p><i class="fa-solid fa-location-dot"></i> West Rampura, Dhaka-1219</p>
-        </div>
+      <h1>Aminul Islam</h1>
+      <div class="contact">
+        <a href="mailto:aminul.edu123@gmail.com">aminul.edu123@gmail.com</a> |
+        <a href="https://www.linkedin.com/in/aymon123" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/Aminul-Islam4" target="_blank">GitHub</a> |
+        <span title="Phone hidden for privacy">📞 [Hidden]</span> |
+        <span>📍 West Rampura, Dhaka-1219</span>
       </div>
-      <img src="assets/photo.jpg" alt="Aminul Islam">
     </header>
 
     <section>
       <h2>Summary</h2>
-      <p>Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications. Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and Hugging Face Transformers. Passionate about solving real-world problems through data-driven solutions and quick to adapt to new technologies.</p>
+      <p>
+        Computer Science graduate (final defense pending) from <strong>BRAC University</strong> with experience in
+        <strong>machine learning</strong> and AI-powered applications. Proficient in <strong>Python</strong>,
+        data structures, algorithms, and OOP, with hands-on experience in
+        <strong>PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, Hugging Face</strong>.
+        Passionate about solving real-world problems through data-driven solutions.
+      </p>
     </section>
 
     <section>
       <h2>Education</h2>
-      <div class="education-entry">
-        <strong>BRAC University</strong> (2020 – May 2025) <br />Bachelor of Science in Computer Science
-      </div>
-      <div class="education-entry">
-        <strong>Dhaka Imperial College</strong> (2017 – 2019) <br />Higher Secondary Certificate (Science)
-      </div>
-      <div class="education-entry">
-        <strong>National Ideal School</strong> (2016 – 2017) <br />Secondary School Certificate (Science)
-      </div>
+      <ul>
+        <li><strong>BRAC University</strong> — BSc in Computer Science (2020 – May 2025)</li>
+        <li><strong>Dhaka Imperial College</strong> — HSC, Science (2017 – 2019)</li>
+        <li><strong>National Ideal School</strong> — SSC, Science (2016 – 2017)</li>
+      </ul>
     </section>
 
     <section>
       <h2>Projects</h2>
-
-      <div class="project">
-        <h3>AI-Powered Academic Assessment Portal</h3>
-        <p>Developed an AI-driven academic self-assessment platform by integrating pre-trained mT5 and Bangla Sentence Transformer models using Hugging Face Transformers.</p>
-        <p class="tech">Python, mT5, Sentence Transformer, PyTorch, Pandas</p>
-      </div>
-
-      <div class="project">
-        <h3>Plant Disease Detection with ResNet-18</h3>
-        <p>Used transfer learning with ResNet-18 to detect plant diseases with high accuracy and enable real-time custom image prediction.</p>
-        <p class="tech">PyTorch, torchvision, Google Colab, Python, Transfer Learning, Matplotlib</p>
-      </div>
-
-      <div class="project">
-        <h3>Online Payment Fraud Detection</h3>
-        <p>Built a fraud detection system using Logistic Regression, Naive Bayes, and KNN classifiers. Achieved 99% accuracy with KNN.</p>
-        <p class="tech">Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn</p>
-      </div>
-
-      <div class="project">
-        <h3>Bug Tracking and Management System</h3>
-        <p>Developed a role-based web application for tracking and managing software bugs with admin and user functionalities.</p>
-        <p class="tech">HTML, CSS, PHP, MySQL</p>
-      </div>
-
-      <div class="project">
-        <h3>Dijkstra’s Algorithm Tool</h3>
-        <p>Implemented Dijkstra’s algorithm in Python for shortest path calculation using dynamic input parsing from .docx files.</p>
-        <p class="tech">Python, Dijkstra, python-docx, Google Colab</p>
-      </div>
-
-      <div class="project">
-        <h3>Automatic Seed Sowing Robot</h3>
-        <p>Built an Arduino-based robot for automatic seed sowing with IR and ultrasonic sensors, servo motors, and a water pump.</p>
-        <p class="tech">C++, Arduino, IR Sensor, Ultrasonic Sensor, Servo Motor, Water Pump</p>
-      </div>
-    </section>
-
-    <section class="research">
-      <h2>Research</h2>
-      <p><strong>Comparative Analysis of CNN and RNN for Bangla Handwritten Character Recognition</strong><br />Presented at the 3rd International Conference on AIMLA 2025 (IEEE + East Carolina University, USA)</p>
-    </section>
-
-    <section class="skills">
-      <h2>Skills</h2>
-      <p><strong>Programming:</strong> Python, JavaScript, PHP</p>
-      <p><strong>ML & Data Science:</strong> Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy</p>
-      <p><strong>Databases:</strong> MySQL, SQL</p>
-      <p><strong>Version Control:</strong> Git, GitHub</p>
-      <p><strong>Expertise:</strong> Data Structures, Algorithms, OOP</p>
-    </section>
-
-    <section class="competencies">
-      <h2>Core Competencies</h2>
-      <ul class="competency-list">
-        <li><strong>Critical Thinking:</strong> Solves complex problems efficiently and logically.</li>
-        <li><strong>Adaptability:</strong> Quickly adopts new tools and responds to feedback.</li>
-        <li><strong>Debugging & Troubleshooting:</strong> Identifies and resolves issues effectively.</li>
-        <li><strong>Technical Expertise:</strong> Develops impactful, optimized solutions.</li>
+      <ul>
+        <li>
+          <strong>AI-Powered Academic Assessment Portal</strong><br/>
+          Developed a self-assessment platform using <em>mT5</em> and <em>Bangla Sentence Transformer</em>.
+          <br/><em>Python, mT5, PyTorch, Hugging Face</em>
+        </li>
+        <li>
+          <strong>Plant Disease Detection</strong><br/>
+          Used <em>ResNet-18</em> and transfer learning for image classification.
+          <br/><em>PyTorch, Transfer Learning, Google Colab</em>
+        </li>
+        <li>
+          <strong>Online Payment Fraud Detection</strong><br/>
+          Applied <em>KNN, Logistic Regression</em>, and <em>Naive Bayes</em> to detect fraudulent transactions.
+          <br/><em>Scikit-learn, Python, Pandas</em>
+        </li>
+        <li>
+          <strong>Bug Tracking and Management System</strong><br/>
+          Web application with admin and user role-based features.
+          <br/><em>HTML, CSS, PHP, MySQL</em>
+        </li>
+        <li>
+          <strong>Dijkstra’s Algorithm Tool</strong><br/>
+          Calculated shortest paths using user-input and `.docx` data.
+          <br/><em>Python, Google Colab, python-docx</em>
+        </li>
+        <li>
+          <strong>Automatic Seed Sowing Robot</strong><br/>
+          Robot with obstacle avoidance and irrigation capability.
+          <br/><em>Arduino, C++, Sensors, Servo Motor</em>
+        </li>
       </ul>
     </section>
 
-    <section class="reference">
-      <h2>Reference</h2>
-      <p><strong>Syeada Sanjida Jahan</strong><br />Infrastructure Engineer, Amazon.co.jp<br /><a href="mailto:sanjidasn@gmail.com">sanjidasn@gmail.com</a></p>
+    <section>
+      <h2>Research</h2>
+      <p>
+        <strong>Comparative Analysis of CNN and RNN for Bangla Handwritten Recognition</strong><br/>
+        Presented at AIMLA 2025 (IEEE, East Carolina University, USA)
+      </p>
     </section>
+
+    <section>
+      <h2>Skills</h2>
+      <p>
+        <strong>Languages:</strong> Python, JavaScript, PHP<br/>
+        <strong>ML/DS:</strong> PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy<br/>
+        <strong>Database:</strong> SQL, MySQL<br/>
+        <strong>Other:</strong> Git, GitHub, Data Structures, Algorithms, OOP
+      </p>
+    </section>
+
+    <section>
+      <h2>Core Competencies</h2>
+      <ul>
+        <li><strong>Critical Thinking:</strong> Solves complex problems logically</li>
+        <li><strong>Adaptability:</strong> Quickly learns tools and incorporates feedback</li>
+        <li><strong>Debugging:</strong> Identifies and resolves code issues efficiently</li>
+        <li><strong>Technical Expertise:</strong> Builds optimized, scalable solutions</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Reference</h2>
+      <p>
+        <strong>Syeada Sanjida Jahan</strong><br/>
+        Infrastructure Engineer, Amazon.co.jp<br/>
+        <a href="mailto:sanjidasn@gmail.com">sanjidasn@gmail.com</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2025 Aminul Islam. All rights reserved.</p>
+    </footer>
   </div>
 </body>
 </html>
