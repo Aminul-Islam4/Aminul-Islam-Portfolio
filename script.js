@@ -1,5 +1,4 @@
-function toggleTheme() {
-  const root = document.documentElement;
-  const current = root.getAttribute('data-theme');
-  root.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
-}
+const toggleBtn = document.getElementById("toggle-theme");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
