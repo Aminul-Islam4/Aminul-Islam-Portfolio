@@ -1,101 +1,39 @@
-/* style.css */
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --accent-color: #005f73;
-  --section-padding: 40px;
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --primary-color: #0073b1; /* LinkedIn blue */
+  --bg-color: #f9f9f9;
+  --text-color: #222;
+  --text-secondary: #555;
+  --header-bg: #fff;
+  --footer-bg: #eee;
 }
 
-body.dark {
-  --bg-color: #0f172a;
-  --text-color: #f1f5f9;
-  --accent-color: #38bdf8;
+.dark {
+  --bg-color: #121212;
+  --text-color: #ddd;
+  --text-secondary: #aaa;
+  --header-bg: #1f1f1f;
+  --footer-bg: #222;
 }
 
+/* Body */
 body {
-  margin: 0;
-  font-family: var(--font-family);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: all 0.4s ease;
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding-bottom: 40px;
 }
 
-header nav {
+/* Navbar / Header */
+.navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: var(--accent-color);
-  color: white;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-section {
-  padding: var(--section-padding);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-section h2 {
-  font-size: 28px;
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-.edu-entry, .projects ul, .competencies ul {
-  margin-bottom: 20px;
-}
-
-.edu-entry {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: var(--accent-color);
-  color: white;
-}
-
-footer .social a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-}
-
-button {
-  padding: 8px 12px;
-  background: white;
-  color: var(--accent-color);
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-button:hover {
-  background: var(--accent-color);
-  color: white;
-}
-
-@media (max-width: 768px) {
-  header nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .edu-entry {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
+  flex-wrap
