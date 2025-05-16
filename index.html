@@ -3,79 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aminul Islam - Portfolio</title>
+  <title>Aminul Islam | Portfolio</title>
+
+  <!-- Font Awesome for social icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papb9x6yjHf+Zg0Q9P5EpZxVYzZ3fTrlf3T4bOgF4lhzKOkHRG8KX2Mr8EMiH63F3zrPZ7zHAThT54W0E2dGA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <h1 class="logo">Aminul Islam</h1>
-      <div class="contact-links">
-        <a href="mailto:aminul.edu123@gmail.com" title="Email">
+    <nav>
+      <h1>Aminul Islam</h1>
+      <div class="contact-icons">
+        <a href="mailto:aminul.edu123@gmail.com" title="Email" target="_blank" rel="noopener noreferrer">
           <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://github.com/Aminul-Islam4" target="_blank" rel="noopener" title="GitHub">
+        <a href="https://github.com/Aminul-Islam4" title="GitHub" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://linkedin.com/in/aymon123" target="_blank" rel="noopener" title="LinkedIn">
+        <a href="https://linkedin.com/in/aymon123" title="LinkedIn" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-linkedin"></i>
         </a>
-        <span title="Location" class="address">
-          <i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh
-        </span>
       </div>
-      <button id="toggle-theme" aria-label="Toggle dark mode">🌙</button>
+      <div class="toggle-theme">
+        <button id="toggle-theme">Toggle Dark Mode</button>
+      </div>
     </nav>
+    <p class="address">Dhaka, Bangladesh</p>
   </header>
 
   <main>
-    <section id="summary" class="section fade-in">
-      <h2 class="section-title">Summary</h2>
+    <section id="summary" class="section">
+      <h2>Summary</h2>
       <p>
-        Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications.
-        Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and Hugging Face Transformers.
-        Passionate about solving real-world problems through data-driven solutions and quick to adapt to new technologies.
+        Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications. Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and Hugging Face Transformers. Passionate about solving real-world problems through data-driven solutions and quick to adapt to new technologies.
       </p>
     </section>
 
-    <section id="education" class="section fade-in">
-      <h2 class="section-title">Education</h2>
-
-      <div class="education-item">
-        <div class="education-info">
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <div class="edu-item">
+        <div class="edu-left">
           <h3>BRAC University</h3>
           <p>Bachelor of Science in Computer Science</p>
         </div>
-        <span class="education-year">2020 – May 2025</span>
+        <div class="edu-right">2020 – May 2025</div>
       </div>
-
-      <div class="education-item">
-        <div class="education-info">
+      <div class="edu-item">
+        <div class="edu-left">
           <h3>Dhaka Imperial College</h3>
           <p>Higher Secondary Certificate (Science)</p>
         </div>
-        <span class="education-year">2017 – 2019</span>
+        <div class="edu-right">2017 – 2019</div>
       </div>
-
-      <div class="education-item">
-        <div class="education-info">
+      <div class="edu-item">
+        <div class="edu-left">
           <h3>National Ideal School</h3>
           <p>Secondary School Certificate (Science)</p>
         </div>
-        <span class="education-year">2016 – 2017</span>
+        <div class="edu-right">2016 – 2017</div>
       </div>
     </section>
 
-    <section id="projects" class="section fade-in">
-      <h2 class="section-title">Projects</h2>
-
+    <section id="projects" class="section">
+      <h2>Projects</h2>
       <div class="project-item">
         <h3>AI-Powered Academic Assessment Portal with Performance Tracking</h3>
         <p>
           Developed an AI-driven academic self-assessment platform by integrating pre-trained mT5 and Bangla Sentence Transformer models using Hugging Face Transformers.
         </p>
-        <p><strong>Technical Stack:</strong> Python, mT5, Sentence Transformer, PyTorch, Pandas</p>
+        <p><strong>Tech Stack:</strong> Python, mT5, Sentence Transformer, PyTorch, Pandas</p>
       </div>
 
       <div class="project-item">
@@ -83,58 +86,49 @@
         <p>
           Developed a plant disease detection model using ResNet-18 with transfer learning, achieving high accuracy and enabling custom image prediction.
         </p>
-        <p><strong>Technical Stack:</strong> PyTorch, torchvision, Google Colab, Python, Transfer Learning, Matplotlib</p>
+        <p><strong>Tech Stack:</strong> PyTorch, torchvision, Google Colab, Python, Transfer Learning, Matplotlib</p>
       </div>
 
       <div class="project-item">
         <h3>Online Payment Fraud Detection System</h3>
         <p>
-          Built a fraud detection system using Logistic Regression, Naive Bayes, and KNN classifiers.
-          Achieved 99% accuracy with KNN and evaluated model metrics with F1-score.
+          Built a fraud detection system using Logistic Regression, Naive Bayes, and KNN classifiers achieving 99% accuracy with KNN.
         </p>
-        <p><strong>Technical Stack:</strong> Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn</p>
+        <p><strong>Tech Stack:</strong> Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn</p>
       </div>
 
       <div class="project-item">
         <h3>Bug Tracking and Management System</h3>
         <p>Developed a role-based bug tracking web application with admin and user functionalities.</p>
-        <p><strong>Technical Stack:</strong> HTML, CSS, PHP, MySQL</p>
+        <p><strong>Tech Stack:</strong> HTML, CSS, PHP, MySQL</p>
       </div>
 
       <div class="project-item">
         <h3>Dijkstra’s Algorithm for Shortest Path Calculation</h3>
         <p>Developed a Python program for shortest path calculation with Dijkstra’s Algorithm.</p>
-        <p><strong>Technical Stack:</strong> Python, Dijkstra’s Algorithm, python-docx, Google Colab</p>
+        <p><strong>Tech Stack:</strong> Python, Dijkstra’s Algorithm, python-docx, Google Colab</p>
       </div>
 
       <div class="project-item">
         <h3>Automatic Seed Sowing Robot</h3>
         <p>Designed an autonomous robot for seed sowing with obstacle avoidance and water dispersion.</p>
-        <p><strong>Technical Stack:</strong> C++, Arduino, IR Sensor, Ultrasonic Sensor, Servo Motor, Water Pump</p>
+        <p><strong>Tech Stack:</strong> C++, Arduino, IR Sensor, Ultrasonic Sensor, Servo Motor, Water Pump</p>
       </div>
     </section>
 
-    <section id="skills" class="section fade-in">
-      <h2 class="section-title">Skills</h2>
+    <section id="skills" class="section">
+      <h2>Skills</h2>
       <ul class="skills-list">
-        <li>Python</li>
-        <li>JavaScript</li>
-        <li>PHP</li>
-        <li>Scikit-learn</li>
-        <li>TensorFlow</li>
-        <li>PyTorch</li>
-        <li>Pandas</li>
-        <li>NumPy</li>
-        <li>MySQL</li>
-        <li>SQL</li>
-        <li>Git / GitHub</li>
-        <li>Data Structures & Algorithms</li>
-        <li>OOP</li>
+        <li>Programming: Python, JavaScript, PHP</li>
+        <li>ML/Data Science: Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy</li>
+        <li>Database: MySQL, SQL</li>
+        <li>Version Control: Git, GitHub</li>
+        <li>Other Expertise: Data Structures, Algorithms, OOP</li>
       </ul>
     </section>
 
-    <section id="competencies" class="section fade-in">
-      <h2 class="section-title">Core Competencies</h2>
+    <section id="core-competencies" class="section">
+      <h2>Core Competencies</h2>
       <ul class="competencies-list">
         <li>Critical Thinking: Solves complex problems efficiently and logically.</li>
         <li>Adaptability: Quickly adopts new tools and responds to feedback.</li>
@@ -145,33 +139,39 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Aminul Islam. All rights reserved.</p>
+    <p>© 2025 Aminul Islam. All rights reserved.</p>
   </footer>
 
   <script>
     const toggleBtn = document.getElementById('toggle-theme');
     toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-theme');
-      toggleBtn.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+      document.body.classList.toggle('dark-mode');
+      if(document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
     });
 
-    // Scroll fade-in animation
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {
-      threshold: 0.2,
-      rootMargin: "0px 0px -50px 0px"
-    };
+    // Load theme preference on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      if(localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+    });
 
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    // Animate on scroll (fade in)
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('appear');
-        appearOnScroll.unobserve(entry.target);
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
-    }, appearOptions);
+    }, { threshold: 0.1 });
 
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
+    sections.forEach(section => {
+      observer.observe(section);
     });
   </script>
 </body>
