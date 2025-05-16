@@ -1,95 +1,47 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aminul Islam | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Aminul Islam</h1>
-      <button class="toggle-theme" id="toggle-theme">Toggle Theme</button>
-    </header>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:aminul.edu123@gmail.com">aminul.edu123@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/aymon123" target="_blank">linkedin.com/in/aymon123</a></p>
-      <p>GitHub: <a href="https://github.com/Aminul-Islam4" target="_blank">github.com/Aminul-Islam4</a></p>
-      <p>Location: West Rampura, Dhaka-1219</p>
+<body class="dark-mode">
+  <header>
+    <h1>Aminul Islam</h1>
+    <button id="theme-toggle" class="theme-toggle">
+      <i class="fas fa-sun"></i> Light Mode
+    </button>
+  </header>
+
+  <main>
+    <section class="summary">
+      <p>Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications...</p>
     </section>
 
-    <section>
-      <h2>Summary</h2>
-      <p>Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications. Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and Hugging Face Transformers. Passionate about solving real-world problems through data-driven solutions and quick to adapt to new technologies.</p>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <ul>
-        <li>BRAC University (2020–May 2025) - BSc in Computer Science</li>
-        <li>Dhaka Imperial College (2017–2019) - HSC</li>
-        <li>National Ideal School (2016–2017) - SSC</li>
-      </ul>
-    </section>
-
-    <section>
+    <section class="projects">
       <h2>Projects</h2>
-      <div class="projects">
-        <div class="card">
-          <h3>AI-Powered Academic Assessment Portal</h3>
-          <p>Integrated mT5 and Bangla Sentence Transformer for personalized academic feedback.</p>
-          <p class="stack">Python, PyTorch, Hugging Face, Pandas</p>
-        </div>
-        <div class="card">
-          <h3>Plant Disease Detection with ResNet-18</h3>
-          <p>Image classifier using transfer learning and ResNet-18 architecture.</p>
-          <p class="stack">PyTorch, Transfer Learning, Google Colab</p>
-        </div>
-        <div class="card">
-          <h3>Online Payment Fraud Detection</h3>
-          <p>Achieved 99% accuracy with KNN classifier and detailed evaluation metrics.</p>
-          <p class="stack">Python, Scikit-learn, Matplotlib</p>
-        </div>
-        <div class="card">
-          <h3>Bug Tracking & Management System</h3>
-          <p>Role-based bug reporting platform with admin/user functionality.</p>
-          <p class="stack">HTML, CSS, PHP, MySQL</p>
-        </div>
-        <div class="card">
-          <h3>Dijkstra’s Algorithm Tool</h3>
-          <p>Shortest path calculator built in Python with docx export.</p>
-          <p class="stack">Python, Dijkstra, Google Colab</p>
-        </div>
-        <div class="card">
-          <h3>Automatic Seed Sowing Robot</h3>
-          <p>Autonomous robot with obstacle avoidance and watering capability.</p>
-          <p class="stack">Arduino, C++, Sensors, Servo Motor</p>
-        </div>
+      <div class="project-card">
+        <h3>AI-Powered Academic Assessment Portal</h3>
+        <p>Developed using mT5 and Bangla Sentence Transformer models.</p>
       </div>
+      <div class="project-card">
+        <h3>Plant Disease Detection</h3>
+        <p>Image Classification using ResNet-18 and Transfer Learning.</p>
+      </div>
+      <!-- Add more projects as needed -->
     </section>
+  </main>
 
-    <section>
-      <h2>Research</h2>
-      <p>Comparative Analysis of CNN and RNN for Bangla Handwritten Character Recognition presented at AIMLA 2025 in collaboration with IEEE & East Carolina University.</p>
-    </section>
+  <footer>
+    <p>Contact: aminul.edu123@gmail.com | <a href="https://linkedin.com/in/aymon123">LinkedIn</a> | <a href="https://github.com/Aminul-Islam4">GitHub</a></p>
+  </footer>
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>Languages: Python, JavaScript, PHP</li>
-        <li>Frameworks: PyTorch, TensorFlow, Scikit-learn</li>
-        <li>Tools: Git, GitHub, MySQL</li>
-        <li>Concepts: Data Structures, Algorithms, OOP</li>
-      </ul>
-    </section>
-
-    <footer>
-      <p>&copy; 2025 Aminul Islam. All rights reserved.</p>
-    </footer>
-  </div>
   <script src="script.js"></script>
 </body>
+
 </html>
