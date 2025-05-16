@@ -1,49 +1,17 @@
-// script.js
+const themeToggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
+const icon = themeToggleBtn.querySelector('i');
 
-document.addEventListener("DOMContentLoaded", () => {
-  const themeToggle = document.getElementById("theme-toggle");
-  const body = document.body;
+// Check saved theme in localStorage and apply it
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  body.classList.toggle('dark', savedTheme === 'dark');
+  icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+}
 
-  // Load saved theme from localStorage
-  const savedTheme = localStorage.getItem("theme") || "dark";
-  setTheme(savedTheme);
-
-  // Toggle theme on button click
-  themeToggle.addEventListener("click", () => {
-    const newTheme = body.classList.contains("dark-mode") ? "light" : "dark";
-    setTheme(newTheme);
-  });
-
-  function setTheme(theme) {
-    if (theme === "dark") {
-      body.classList.add("dark-mode");
-      body.classList.remove("light-mode");
-      themeToggle.innerHTML = `<i class="fas fa-sun"></i> Light Mode`;
-    } else {
-      body.classList.add("light-mode");
-      body.classList.remove("dark-mode");
-      themeToggle.innerHTML = `<i class="fas fa-moon"></i> Dark Mode`;
-    }
-
-    localStorage.setItem("theme", theme);
-  }
-
-  // Animate project cards on scroll
-  const cards = document.querySelectorAll(".project-card");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("fade-in");
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-    }
-  );
-
-  cards.forEach((card) => {
-    observer.observe(card);
-  });
+// Toggle theme on button click
+themeToggleBtn.addEventListener('click', () => {
+  const isDark = body.classList.toggle('dark');
+  icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
