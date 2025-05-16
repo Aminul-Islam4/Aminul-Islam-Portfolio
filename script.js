@@ -51,7 +51,8 @@ function type() {
       phraseIndex = (phraseIndex + 1) % phrases.length;
     }
   }
-  setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
+  setTimeout(type, typingSpeed);
 }
 
+// Start the typing effect
 type();
