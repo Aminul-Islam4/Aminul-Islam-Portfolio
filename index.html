@@ -1,117 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aminul Islam | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aminul Islam | Developer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header class="header">
     <div class="container">
       <h1>Aminul Islam</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#summary">Summary</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#competencies">Core Competencies</a></li>
-          <li><button id="theme-toggle">🌙</button></li>
-        </ul>
-      </nav>
+      <p class="email">aminul.edu123@gmail.com</p>
+      <div class="socials">
+        <a href="https://github.com/Aminul-Islam4" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" />
+        </a>
+        <a href="https://linkedin.com/in/aymon123" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" />
+        </a>
+        <span class="address">West Rampura, Dhaka-1219</span>
+        <button class="toggle-btn" onclick="toggleTheme()">🌓</button>
+      </div>
     </div>
   </header>
 
-  <section class="intro">
-    <div class="container">
-      <p>Email: <a href="mailto:aminul.edu123@gmail.com">aminul.edu123@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/Aminul-Islam4" target="_blank">Aminul-Islam4</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/aymon123" target="_blank">aymon123</a></p>
-      <p>Location: West Rampura, Dhaka-1219</p>
-    </div>
-  </section>
-
-  <section id="summary">
-    <div class="container">
+  <main class="container">
+    <section>
       <h2>Summary</h2>
-      <p>Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications. Proficient in Python, data structures, algorithms, and OOP. Passionate about solving real-world problems through data-driven solutions.</p>
-    </div>
-  </section>
+      <p>
+        Computer Science graduate from BRAC University with expertise in Python, data structures, algorithms, and machine learning. Passionate about building AI-powered solutions, web applications, and solving real-world problems using data.
+      </p>
+    </section>
 
-  <section id="education">
-    <div class="container">
+    <section>
       <h2>Education</h2>
-      <div class="edu-entry">
-        <h3>BRAC University <span class="year">2020 – May 2025</span></h3>
-        <p>Bachelor of Science in Computer Science</p>
+      <div class="edu">
+        <div>
+          <h3>BRAC University</h3>
+          <p>BSc in Computer Science</p>
+        </div>
+        <span>2020 – 2025</span>
       </div>
-      <div class="edu-entry">
-        <h3>Dhaka Imperial College <span class="year">2017 – 2019</span></h3>
-        <p>Higher Secondary Certificate (Science)</p>
+      <div class="edu">
+        <div>
+          <h3>Dhaka Imperial College</h3>
+          <p>HSC (Science)</p>
+        </div>
+        <span>2017 – 2019</span>
       </div>
-      <div class="edu-entry">
-        <h3>National Ideal School <span class="year">2016 – 2017</span></h3>
-        <p>Secondary School Certificate (Science)</p>
+      <div class="edu">
+        <div>
+          <h3>National Ideal School</h3>
+          <p>SSC (Science)</p>
+        </div>
+        <span>2016 – 2017</span>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="projects">
-    <div class="container">
+    <section>
       <h2>Projects</h2>
       <ul>
-        <li><strong>AI-Powered Academic Portal:</strong> Integrated mT5 and Bangla Transformer models.</li>
-        <li><strong>Plant Disease Detection:</strong> ResNet-18 with transfer learning using PyTorch.</li>
-        <li><strong>Online Payment Fraud Detection:</strong> Logistic Regression, KNN, Naive Bayes models.</li>
-        <li><strong>Bug Tracking System:</strong> Role-based system using PHP, MySQL, HTML, CSS.</li>
-        <li><strong>Dijkstra's Shortest Path Tool:</strong> Python, docx, Google Colab.</li>
-        <li><strong>Automatic Seed Sowing Robot:</strong> Arduino-based with IR, Ultrasonic, Servo.</li>
+        <li>
+          <strong>AI-Powered Academic Assessment Portal</strong> – Built with mT5, Sentence Transformers for self-assessment and performance tracking.
+        </li>
+        <li>
+          <strong>Plant Disease Detection</strong> – Used ResNet-18 with transfer learning in PyTorch.
+        </li>
+        <li>
+          <strong>Online Fraud Detection System</strong> – Logistic Regression, Naive Bayes, and KNN.
+        </li>
+        <li>
+          <strong>Bug Tracking System</strong> – Role-based bug tracker using HTML, CSS, PHP, MySQL.
+        </li>
+        <li>
+          <strong>Dijkstra’s Shortest Path Tool</strong> – Built with Python and `python-docx`.
+        </li>
+        <li>
+          <strong>Automatic Seed Sowing Robot</strong> – Arduino + C++ + hardware.
+        </li>
       </ul>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills">
-    <div class="container">
+    <section>
       <h2>Skills</h2>
-      <ul class="skills-list">
+      <ul class="skills">
         <li>Python</li>
         <li>JavaScript</li>
         <li>PHP</li>
         <li>PyTorch</li>
         <li>TensorFlow</li>
         <li>Scikit-learn</li>
-        <li>Pandas</li>
-        <li>MySQL</li>
+        <li>SQL / MySQL</li>
         <li>Git & GitHub</li>
+        <li>HTML / CSS</li>
       </ul>
-    </div>
-  </section>
+    </section>
 
-  <section id="competencies">
-    <div class="container">
+    <section>
       <h2>Core Competencies</h2>
       <ul>
-        <li>Critical Thinking</li>
-        <li>Adaptability</li>
+        <li>Critical Thinking & Problem Solving</li>
+        <li>Adaptability to Tools & Technologies</li>
         <li>Debugging & Troubleshooting</li>
-        <li>Technical Expertise</li>
+        <li>Clean Code & Best Practices</li>
       </ul>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer class="footer">
+  <footer>
     <div class="container">
       <p>&copy; 2025 Aminul Islam. All rights reserved.</p>
     </div>
   </footer>
-
-  <script>
-    const toggle = document.getElementById('theme-toggle');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-    });
-  </script>
 </body>
 </html>
