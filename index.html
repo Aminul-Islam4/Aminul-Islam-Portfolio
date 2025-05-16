@@ -1,94 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aminul Islam - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aminul Islam | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <header class="header">
-    <div class="container">
-      <h1>Aminul Islam</h1>
-      <p class="location">📍 Dhaka, Bangladesh</p>
-      <div class="socials">
-        <a href="mailto:aminul.edu123@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/Aminul-Islam4" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/aymon123" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <nav class="navbar container">
+      <h1 class="logo">Aminul Islam</h1>
+      <div class="contact-icons">
+        <a href="mailto:aminul.edu123@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Aminul-Islam4" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/aymon123" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
       </div>
-      <button id="toggle-theme">Toggle Dark Mode</button>
-    </div>
+      <button id="toggle-theme" class="theme-toggle">Toggle Dark Mode</button>
+    </nav>
   </header>
 
-  <main class="container">
-    <section class="summary section">
-      <h2>Summary</h2>
-      <p>Computer Science graduate (final defense pending) from BRAC University. Experienced in machine learning and AI-powered applications. Skilled in Python, data structures, algorithms, OOP, and frameworks like PyTorch, TensorFlow, and Hugging Face Transformers.</p>
-    </section>
+  <section class="hero container">
+    <p class="location">Dhaka, Bangladesh</p>
+    <p class="summary">
+      Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications. Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, and more.
+    </p>
+  </section>
 
-    <section class="education section">
-      <h2>Education</h2>
-      <div class="edu-entry">
-        <div>BRAC University</div><span>2020 – May 2025</span>
-        <p>Bachelor of Science in Computer Science</p>
-      </div>
-      <div class="edu-entry">
-        <div>Dhaka Imperial College</div><span>2017 – 2019</span>
-        <p>Higher Secondary Certificate (Science)</p>
-      </div>
-      <div class="edu-entry">
-        <div>National Ideal School</div><span>2016 – 2017</span>
-        <p>Secondary School Certificate (Science)</p>
-      </div>
-    </section>
+  <section class="education container">
+    <h2>Education</h2>
+    <div class="edu-entry">
+      <span>BRAC University</span>
+      <span class="year">2020 - May 2025</span>
+      <p>Bachelor of Science in Computer Science</p>
+    </div>
+    <div class="edu-entry">
+      <span>Dhaka Imperial College</span>
+      <span class="year">2017 - 2019</span>
+      <p>Higher Secondary Certificate (Science)</p>
+    </div>
+    <div class="edu-entry">
+      <span>National Ideal School</span>
+      <span class="year">2016 - 2017</span>
+      <p>Secondary School Certificate (Science)</p>
+    </div>
+  </section>
 
-    <section class="projects section">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <a href="https://github.com/Aminul-Islam4/Plant-Disease-Detection" class="project-card" target="_blank">
-          <h3>Plant Disease Detection</h3>
-          <p>Image classification using ResNet-18 and transfer learning.</p>
-        </a>
-        <a href="https://github.com/Aminul-Islam4/python-dijkstra-pathfinder" class="project-card" target="_blank">
-          <h3>Dijkstra's Algorithm</h3>
-          <p>Python-based shortest path calculator using Dijkstra's algorithm.</p>
-        </a>
-        <a href="https://github.com/Aminul-Islam4/Bug-Tracker" class="project-card" target="_blank">
-          <h3>Bug Tracker</h3>
-          <p>Role-based web app to manage and report bugs efficiently.</p>
-        </a>
-        <a href="https://github.com/Aminul-Islam4/-Automatic-Seed-Sowing-Robot" class="project-card" target="_blank">
-          <h3>Seed Sowing Robot</h3>
-          <p>Autonomous robot for farming tasks like seed sowing and watering.</p>
-        </a>
-        <a href="https://github.com/Aminul-Islam4/-Online-Payment-Fraud-Detection-System" class="project-card" target="_blank">
-          <h3>Fraud Detection System</h3>
-          <p>AI system using KNN and Logistic Regression to detect payment fraud.</p>
-        </a>
-      </div>
-    </section>
+  <section class="projects container">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>AI-Powered Academic Assessment Portal</h3>
+      <p>AI self-assessment platform using pre-trained mT5 and Bangla Sentence Transformer models.</p>
+      <p><strong>Tech:</strong> Python, PyTorch, Hugging Face, Pandas</p>
+    </div>
+    <div class="project-card">
+      <h3>Plant Disease Detection</h3>
+      <p>Image classification using ResNet-18 with transfer learning.</p>
+      <p><strong>Tech:</strong> Python, PyTorch, Matplotlib</p>
+      <a href="https://github.com/Aminul-Islam4/Plant-Disease-Detection" target="_blank">GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>Online Payment Fraud Detection</h3>
+      <p>Fraud detection system using ML classifiers. Achieved 99% accuracy with KNN.</p>
+      <p><strong>Tech:</strong> Scikit-learn, Pandas, Matplotlib</p>
+      <a href="https://github.com/Aminul-Islam4/-Online-Payment-Fraud-Detection-System" target="_blank">GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>Bug Tracking System</h3>
+      <p>Role-based bug tracking web app with admin/user roles.</p>
+      <p><strong>Tech:</strong> PHP, MySQL, HTML, CSS</p>
+      <a href="https://github.com/Aminul-Islam4/Bug-Tracker" target="_blank">GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>Dijkstra's Shortest Path</h3>
+      <p>Python program using Dijkstra’s algorithm for shortest path calculation.</p>
+      <p><strong>Tech:</strong> Python, Google Colab</p>
+      <a href="https://github.com/Aminul-Islam4/python-dijkstra-pathfinder" target="_blank">GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>Automatic Seed Sowing Robot</h3>
+      <p>Autonomous robot with obstacle avoidance and water dispersion.</p>
+      <p><strong>Tech:</strong> Arduino, C++, Sensors</p>
+      <a href="https://github.com/Aminul-Islam4/-Automatic-Seed-Sowing-Robot" target="_blank">GitHub</a>
+    </div>
+  </section>
 
-    <section class="skills section">
-      <h2>Skills</h2>
-      <ul class="skill-list">
-        <li>Python, JavaScript, PHP</li>
-        <li>TensorFlow, PyTorch, Scikit-learn</li>
-        <li>MySQL, Git, GitHub</li>
-        <li>Data Structures, Algorithms, OOP</li>
-      </ul>
-    </section>
+  <section class="skills container">
+    <h2>Skills</h2>
+    <ul>
+      <li>Python, JavaScript, PHP</li>
+      <li>Scikit-learn, TensorFlow, PyTorch</li>
+      <li>MySQL, SQL, Git, GitHub</li>
+      <li>Data Structures, Algorithms, OOP</li>
+    </ul>
+  </section>
 
-    <section class="core-competencies section">
-      <h2>Core Competencies</h2>
-      <ul>
-        <li>Critical Thinking</li>
-        <li>Adaptability</li>
-        <li>Debugging & Troubleshooting</li>
-        <li>Technical Expertise</li>
-      </ul>
-    </section>
-  </main>
+  <section class="competencies container">
+    <h2>Core Competencies</h2>
+    <ul>
+      <li>Critical Thinking</li>
+      <li>Adaptability</li>
+      <li>Debugging & Troubleshooting</li>
+      <li>Technical Expertise</li>
+    </ul>
+  </section>
+
+  <script>
+    document.getElementById('toggle-theme').addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
 </body>
+
 </html>
