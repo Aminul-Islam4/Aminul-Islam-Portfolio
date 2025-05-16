@@ -1,57 +1,54 @@
-// Dark/Light Mode Toggle
-const themeToggleBtn = document.getElementById('theme-toggle');
-
-themeToggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  // Toggle button icon
-  if (document.body.classList.contains('dark')) {
-    themeToggleBtn.textContent = '☀️';
-  } else {
-    themeToggleBtn.textContent = '🌙';
-  }
-});
-
-// Initialize AOS (Animate On Scroll)
-AOS.init({
-  duration: 800,
-  easing: 'ease-in-out',
-  once: true, // animation happens only once on scroll
-});
-
-// Dynamic typing effect for header
-const dynamicTyping = document.querySelector('.dynamic-typing');
+// Dynamic Typing Text
+const typingElement = document.getElementById("dynamic-typing");
 const phrases = [
-  'Aspiring AI & Machine Learning Engineer',
-  'Proficient in Python, SQL, Data Structures & Algorithms',
-  'Skilled in Developing ML Models and AI Solutions'
+  "Aspiring AI & Machine Learning Engineer",
+  "Proficient in Python, SQL, DSA",
+  "Skilled in Developing ML & AI Solutions"
 ];
-
-let phraseIndex = 0;
+let currentPhrase = 0;
 let charIndex = 0;
 let isDeleting = false;
-let typingSpeed = 100;
-let pauseBetweenPhrases = 2000;
 
-function type() {
-  const currentPhrase = phrases[phraseIndex];
-  if (!isDeleting) {
-    dynamicTyping.textContent = currentPhrase.substring(0, charIndex + 1);
-    charIndex++;
-
-    if (charIndex === currentPhrase.length) {
-      isDeleting = true;
-      setTimeout(type, pauseBetweenPhrases);
-      return;
-    }
+function typeEffect() {
+  const currentText = phrases[currentPhrase];
+  if (isDeleting) {
+    typingElement.textContent = currentText.substring(0, charIndex--);
   } else {
-    dynamicTyping.textContent = currentPhrase.substring(0, charIndex - 1);
-    charIndex--;
-    if (charIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-    }
+    typingElement.textContent = currentText.substring(0, charIndex++);
   }
-  setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
-}
 
-type();
+  if (!isDeleting && charIndex === currentText.length) {
+    isDeleting = true;
+    setTimeout(typeEffect, 1500);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    currentPhrase = (currentPhrase + 1) % phrases.length;
+    setTimeout(typeEffect, 500);
+  } else {
+    setTimeout(typeEffect, isDeleting ? 40 : 100);
+  }
+}
+typeEffect();
+
+// Scroll Animation (down and up)
+const sections = document.querySelectorAll("section");
+function animateOnScroll() {
+  const triggerBottom = window.innerHeight * 0.8;
+
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if (top < triggerBottom) {
+      section.classList.add("visible");
+    } else {
+      section.classList.remove("visible"); // allows animating on scroll-up too
+    }
+  });
+}
+window.addEventListener("scroll", animateOnScroll);
+window.addEventListener("load", animateOnScroll);
+
+// Theme toggle
+const toggleBtn = document.getElementById("theme-toggle");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
