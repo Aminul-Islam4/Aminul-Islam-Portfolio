@@ -1,116 +1,112 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aminul Islam | Portfolio</title>
+  <title>Aminul Islam - Developer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <header class="header">
-    <nav class="navbar container">
-      <h1 class="logo">Aminul Islam</h1>
-      <div class="contact-icons">
-        <a href="mailto:aminul.edu123@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/Aminul-Islam4" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/aymon123" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  <header>
+    <nav>
+      <h1>Aminul Islam</h1>
+      <div class="social-icons">
+        <a href="mailto:aminul.edu123@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Aminul-Islam4" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/aymon123" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
-      <button id="toggle-theme" class="theme-toggle">Toggle Dark Mode</button>
+      <button id="toggle-theme">Toggle Dark Mode</button>
     </nav>
+    <p class="location">📍 Dhaka, Bangladesh</p>
   </header>
 
-  <section class="hero container">
-    <p class="location">Dhaka, Bangladesh</p>
-    <p class="summary">
-      Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications. Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, and more.
-    </p>
-  </section>
+  <main>
+    <section class="summary">
+      <h2>Summary</h2>
+      <p>
+        Computer Science graduate (final defense pending) from BRAC University with experience in ML and AI applications.
+        Proficient in Python, data structures, and deep learning. Passionate about building scalable tech solutions.
+      </p>
+    </section>
 
-  <section class="education container">
-    <h2>Education</h2>
-    <div class="edu-entry">
-      <span>BRAC University</span>
-      <span class="year">2020 - May 2025</span>
-      <p>Bachelor of Science in Computer Science</p>
-    </div>
-    <div class="edu-entry">
-      <span>Dhaka Imperial College</span>
-      <span class="year">2017 - 2019</span>
-      <p>Higher Secondary Certificate (Science)</p>
-    </div>
-    <div class="edu-entry">
-      <span>National Ideal School</span>
-      <span class="year">2016 - 2017</span>
-      <p>Secondary School Certificate (Science)</p>
-    </div>
-  </section>
+    <section class="education">
+      <h2>Education</h2>
+      <div class="edu-item">
+        <h3>BRAC University <span>2020 – May 2025</span></h3>
+        <p>Bachelor of Science in Computer Science</p>
+      </div>
+      <div class="edu-item">
+        <h3>Dhaka Imperial College <span>2017 – 2019</span></h3>
+        <p>Higher Secondary Certificate (Science)</p>
+      </div>
+      <div class="edu-item">
+        <h3>National Ideal School <span>2016 – 2017</span></h3>
+        <p>Secondary School Certificate (Science)</p>
+      </div>
+    </section>
 
-  <section class="projects container">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>AI-Powered Academic Assessment Portal</h3>
-      <p>AI self-assessment platform using pre-trained mT5 and Bangla Sentence Transformer models.</p>
-      <p><strong>Tech:</strong> Python, PyTorch, Hugging Face, Pandas</p>
-    </div>
-    <div class="project-card">
-      <h3>Plant Disease Detection</h3>
-      <p>Image classification using ResNet-18 with transfer learning.</p>
-      <p><strong>Tech:</strong> Python, PyTorch, Matplotlib</p>
-      <a href="https://github.com/Aminul-Islam4/Plant-Disease-Detection" target="_blank">GitHub</a>
-    </div>
-    <div class="project-card">
-      <h3>Online Payment Fraud Detection</h3>
-      <p>Fraud detection system using ML classifiers. Achieved 99% accuracy with KNN.</p>
-      <p><strong>Tech:</strong> Scikit-learn, Pandas, Matplotlib</p>
-      <a href="https://github.com/Aminul-Islam4/-Online-Payment-Fraud-Detection-System" target="_blank">GitHub</a>
-    </div>
-    <div class="project-card">
-      <h3>Bug Tracking System</h3>
-      <p>Role-based bug tracking web app with admin/user roles.</p>
-      <p><strong>Tech:</strong> PHP, MySQL, HTML, CSS</p>
-      <a href="https://github.com/Aminul-Islam4/Bug-Tracker" target="_blank">GitHub</a>
-    </div>
-    <div class="project-card">
-      <h3>Dijkstra's Shortest Path</h3>
-      <p>Python program using Dijkstra’s algorithm for shortest path calculation.</p>
-      <p><strong>Tech:</strong> Python, Google Colab</p>
-      <a href="https://github.com/Aminul-Islam4/python-dijkstra-pathfinder" target="_blank">GitHub</a>
-    </div>
-    <div class="project-card">
-      <h3>Automatic Seed Sowing Robot</h3>
-      <p>Autonomous robot with obstacle avoidance and water dispersion.</p>
-      <p><strong>Tech:</strong> Arduino, C++, Sensors</p>
-      <a href="https://github.com/Aminul-Islam4/-Automatic-Seed-Sowing-Robot" target="_blank">GitHub</a>
-    </div>
-  </section>
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <h3>Plant Disease Detection</h3>
+        <p>Transfer learning with ResNet-18 to identify plant diseases accurately.</p>
+        <a href="https://github.com/Aminul-Islam4/Plant-Disease-Detection" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Dijkstra Pathfinder</h3>
+        <p>Python app to visualize shortest path using Dijkstra's Algorithm.</p>
+        <a href="https://github.com/Aminul-Islam4/python-dijkstra-pathfinder" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Bug Tracker</h3>
+        <p>Web-based bug management system with user roles and reporting.</p>
+        <a href="https://github.com/Aminul-Islam4/Bug-Tracker" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Automatic Seed Sowing Robot</h3>
+        <p>Autonomous robot for precision seed sowing and obstacle avoidance.</p>
+        <a href="https://github.com/Aminul-Islam4/-Automatic-Seed-Sowing-Robot" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Fraud Detection System</h3>
+        <p>ML models to detect fraudulent transactions in payment systems.</p>
+        <a href="https://github.com/Aminul-Islam4/-Online-Payment-Fraud-Detection-System" target="_blank">View on GitHub</a>
+      </div>
+    </section>
 
-  <section class="skills container">
-    <h2>Skills</h2>
-    <ul>
-      <li>Python, JavaScript, PHP</li>
-      <li>Scikit-learn, TensorFlow, PyTorch</li>
-      <li>MySQL, SQL, Git, GitHub</li>
-      <li>Data Structures, Algorithms, OOP</li>
-    </ul>
-  </section>
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Python, JavaScript, PHP</li>
+        <li>Scikit-learn, TensorFlow, PyTorch</li>
+        <li>MySQL, SQL, Git/GitHub</li>
+        <li>Data Structures, Algorithms, OOP</li>
+      </ul>
+    </section>
 
-  <section class="competencies container">
-    <h2>Core Competencies</h2>
-    <ul>
-      <li>Critical Thinking</li>
-      <li>Adaptability</li>
-      <li>Debugging & Troubleshooting</li>
-      <li>Technical Expertise</li>
-    </ul>
-  </section>
+    <section class="competencies">
+      <h2>Core Competencies</h2>
+      <ul>
+        <li>Critical Thinking</li>
+        <li>Debugging & Troubleshooting</li>
+        <li>Adaptability</li>
+        <li>Technical Expertise</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Aminul Islam. All rights reserved.</p>
+  </footer>
 
   <script>
-    document.getElementById('toggle-theme').addEventListener('click', () => {
-      document.body.classList.toggle('dark');
+    const toggleBtn = document.getElementById("toggle-theme");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
     });
   </script>
 </body>
