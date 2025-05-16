@@ -2,129 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aminul Islam | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aminul Islam Portfolio</title>
 
-  <!-- Font Awesome CDN for Icons -->
+  <!-- Font Awesome CDN for icons -->
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-K5zOfkJ6z+OxJvJ+uQ8q+TYvI6v3X2D2AvEJ2O9m0ZY9Yt7F6PYncRJq9Pf/S6EwAZhMnVi0fI4U/OiKZ7In6Q=="
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     crossorigin="anonymous"
-    referrerpolicy="no-referrer"
   />
+
+  <!-- Your stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
-    <h1>Aminul Islam</h1>
-    <button id="theme-toggle" aria-label="Toggle theme">
+    <h1 class="name">Aminul Islam</h1>
+    <div class="contact">
+      <a href="mailto:aminul.edu123@gmail.com" title="Email" target="_blank" rel="noopener">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://github.com/Aminul-Islam4" title="GitHub" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/aymon123" title="LinkedIn" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+    <button id="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark/Light Mode">
       <i class="fas fa-moon"></i>
     </button>
   </header>
 
-  <section class="hero">
-    <p>
-      Computer Science graduate (final defense pending) from BRAC University
-      experienced in ML & AI-powered applications. Skilled in Python, PyTorch,
-      TensorFlow, Keras, and more.
-    </p>
-    <div class="contact">
-      <a href="mailto:aminul.edu123@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://linkedin.com/in/aymon123" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/Aminul-Islam4" target="_blank" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  </section>
-
-  <section class="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>BRAC University:</strong> B.Sc. in Computer Science (2020 – May 2025)</li>
-      <li><strong>Dhaka Imperial College:</strong> HSC (Science), 2017 – 2019</li>
-      <li><strong>National Ideal School:</strong> SSC (Science), 2016 – 2017</li>
-    </ul>
-  </section>
-
-  <section class="projects">
-    <h2>Projects</h2>
-
-    <div class="project-card">
-      <h3>AI-Powered Academic Assessment Portal</h3>
+  <main class="main-content">
+    <section class="summary">
+      <h2>Summary</h2>
       <p>
-        Built with mT5 and Sentence Transformers for intelligent performance tracking.
+        Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications. Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and Hugging Face Transformers. Passionate about solving real-world problems through data-driven solutions and quick to adapt to new technologies.
       </p>
-      <span>Python, PyTorch, Transformers</span>
-    </div>
+    </section>
 
-    <div class="project-card">
-      <h3>Plant Disease Detection (ResNet-18)</h3>
-      <p>
-        Transfer learning approach to detect plant diseases from images.
-      </p>
-      <span>PyTorch, Google Colab</span>
-    </div>
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>AI-Powered Academic Assessment Portal</h3>
+          <p>Developed an AI-driven academic self-assessment platform using pre-trained mT5 and Bangla Sentence Transformer models.</p>
+          <p><strong>Stack:</strong> Python, mT5, Sentence Transformer, PyTorch, Pandas</p>
+          <a href="#" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
 
-    <div class="project-card">
-      <h3>Online Payment Fraud Detection</h3>
-      <p>
-        Detected fraud using KNN, Naive Bayes, and Logistic Regression with 99% accuracy.
-      </p>
-      <span>Scikit-learn, Pandas</span>
-    </div>
+        <div class="project-card">
+          <h3>Plant Disease Detection</h3>
+          <p>Plant disease detection using ResNet-18 with transfer learning, enabling custom image prediction.</p>
+          <p><strong>Stack:</strong> PyTorch, torchvision, Google Colab, Python</p>
+          <a href="#" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
 
-    <div class="project-card">
-      <h3>Bug Tracking System</h3>
-      <p>
-        Role-based bug tracking web application with MySQL backend.
-      </p>
-      <span>HTML, CSS, PHP, MySQL</span>
-    </div>
+        <div class="project-card">
+          <h3>Online Payment Fraud Detection</h3>
+          <p>Built fraud detection system using Logistic Regression, Naive Bayes, and KNN classifiers achieving 99% accuracy.</p>
+          <p><strong>Stack:</strong> Python, Scikit-learn, Pandas, NumPy</p>
+          <a href="#" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
 
-    <div class="project-card">
-      <h3>Dijkstra’s Algorithm Visualizer</h3>
-      <p>
-        Python program to calculate shortest paths using Dijkstra's algorithm.
-      </p>
-      <span>Python, Google Colab</span>
-    </div>
+        <div class="project-card">
+          <h3>Bug Tracking and Management System</h3>
+          <p>Role-based bug tracking web app with admin and user functionalities.</p>
+          <p><strong>Stack:</strong> HTML, CSS, PHP, MySQL</p>
+          <a href="#" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <div class="project-card">
-      <h3>Automatic Seed Sowing Robot</h3>
-      <p>
-        Autonomous seed-sowing robot with obstacle avoidance and water dispersion.
-      </p>
-      <span>Arduino, C++, Sensors</span>
-    </div>
-  </section>
-
-  <section class="research">
-    <h2>Research</h2>
-    <p>
-      Presented at AIMLA 2025 (IEEE & East Carolina University):
-      Comparative analysis of CNN vs. RNN for Bangla handwritten character recognition.
-    </p>
-  </section>
-
-  <section class="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Programming: Python, JavaScript, PHP</li>
-      <li>ML/Data Science: Scikit-learn, TensorFlow, PyTorch</li>
-      <li>Databases: MySQL, SQL</li>
-      <li>Version Control: Git, GitHub</li>
-      <li>Other: Data Structures, Algorithms, OOP</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Aminul Islam. All rights reserved.</p>
+  <footer class="footer">
+    <p>© 2025 Aminul Islam — West Rampura, Dhaka-1219</p>
   </footer>
+
+  <!-- Your JS -->
+  <script src="script.js" defer></script>
 </body>
 </html>
