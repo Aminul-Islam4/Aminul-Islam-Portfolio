@@ -1,18 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aminul Islam | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/scrollreveal"></script>
-</head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aminul Islam - Portfolio</title>
 
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
   <header>
-    <nav>
-      <h1>Aminul Islam</h1>
+    <nav class="navbar">
+      <h1 class="name">Aminul Islam</h1>
+      <div class="contact-icons">
+        <a
+          href="mailto:aminul.edu123@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Email"
+          ><i class="fas fa-envelope"></i
+        ></a>
+        <a
+          href="https://github.com/Aminul-Islam4"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a
+          href="https://linkedin.com/in/aymon123"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </div>
+      <div class="address">Dhaka, Bangladesh</div>
       <div class="toggle-theme">
         <button id="toggle-theme">Toggle Dark Mode</button>
       </div>
@@ -20,91 +49,151 @@
   </header>
 
   <main>
-    <section class="summary section">
+    <section id="summary" class="section fade-in">
       <h2>Summary</h2>
       <p>
-        Computer Science graduate from BRAC University with experience in machine learning, AI-powered applications, and web development. Proficient in Python, data structures, algorithms, and modern frameworks.
+        Computer Science graduate (final defense pending) from BRAC University
+        with experience in machine learning and AI-powered applications.
+        Proficient in Python, data structures, algorithms, and OOP, with hands-on
+        skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and Hugging
+        Face Transformers. Passionate about solving real-world problems through
+        data-driven solutions and quick to adapt to new technologies.
       </p>
     </section>
 
-    <section class="education section">
+    <section id="education" class="section fade-in">
       <h2>Education</h2>
-      <div class="edu-entry">
-        <div>
-          <h3>BRAC University</h3>
-          <p>BSc in Computer Science</p>
-        </div>
-        <span>2020 – 2025</span>
+      <div class="edu-item">
+        <div class="edu-institution">BRAC University</div>
+        <div class="edu-year">2020 – May 2025</div>
+        <div class="edu-degree">Bachelor of Science in Computer Science</div>
       </div>
-      <div class="edu-entry">
-        <div>
-          <h3>Dhaka Imperial College</h3>
-          <p>HSC, Science</p>
-        </div>
-        <span>2017 – 2019</span>
+      <div class="edu-item">
+        <div class="edu-institution">Dhaka Imperial College</div>
+        <div class="edu-year">2017 – 2019</div>
+        <div class="edu-degree">Higher Secondary Certificate (Science)</div>
       </div>
-      <div class="edu-entry">
-        <div>
-          <h3>National Ideal School</h3>
-          <p>SSC, Science</p>
-        </div>
-        <span>2016 – 2017</span>
+      <div class="edu-item">
+        <div class="edu-institution">National Ideal School</div>
+        <div class="edu-year">2016 – 2017</div>
+        <div class="edu-degree">Secondary School Certificate (Science)</div>
       </div>
     </section>
 
-    <section class="projects section">
+    <section id="projects" class="section fade-in">
       <h2>Projects</h2>
       <ul>
-        <li><strong>AI-Powered Academic Assessment Portal</strong> – Self-assessment using mT5 and Bangla Sentence Transformer</li>
-        <li><strong>Plant Disease Detection</strong> – ResNet-18 with transfer learning</li>
-        <li><strong>Fraud Detection System</strong> – Machine learning models with high accuracy</li>
-        <li><strong>Bug Tracking System</strong> – Role-based web application</li>
-        <li><strong>Dijkstra’s Algorithm Tool</strong> – Shortest path calculator</li>
-        <li><strong>Automatic Seed Sowing Robot</strong> – Embedded system for smart agriculture</li>
+        <li>
+          <strong>AI-Powered Academic Assessment Portal with Performance Tracking</strong>
+          <br />
+          Developed an AI-driven academic self-assessment platform by integrating pre-trained
+          mT5 and Bangla Sentence Transformer models using Hugging Face Transformers.
+          <br />
+          <em>Technical Stack:</em> Python, mT5, Sentence Transformer, PyTorch, Pandas
+        </li>
+        <li>
+          <strong>Image Classification using ResNet-18 for Plant Disease Detection</strong>
+          <br />
+          Developed a plant disease detection model using ResNet-18 with transfer learning,
+          achieving high accuracy and enabling custom image prediction.
+          <br />
+          <em>Technical Stack:</em> PyTorch, torchvision, Google Colab, Python, Transfer Learning, Matplotlib
+        </li>
+        <li>
+          <strong>Online Payment Fraud Detection System</strong>
+          <br />
+          Built a fraud detection system using Logistic Regression, Naive Bayes, and KNN classifiers,
+          achieving 99% accuracy with KNN.
+          <br />
+          <em>Technical Stack:</em> Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
+        </li>
+        <li>
+          <strong>Bug Tracking and Management System</strong>
+          <br />
+          Developed a role-based bug tracking web application with admin and user functionalities.
+          <br />
+          <em>Technical Stack:</em> HTML, CSS, PHP, MySQL
+        </li>
+        <li>
+          <strong>Dijkstra’s Algorithm for Shortest Path Calculation</strong>
+          <br />
+          Developed a Python program for shortest path calculation using Dijkstra’s Algorithm.
+          <br />
+          <em>Technical Stack:</em> Python, Dijkstra’s Algorithm, python-docx, Google Colab
+        </li>
+        <li>
+          <strong>Automatic Seed Sowing Robot</strong>
+          <br />
+          Designed an autonomous robot for seed sowing with obstacle avoidance and water dispersion.
+          <br />
+          <em>Technical Stack:</em> C++, Arduino, IR Sensor, Ultrasonic Sensor, Servo Motor, Water Pump
+        </li>
       </ul>
     </section>
 
-    <section class="skills section">
+    <section id="skills" class="section fade-in">
       <h2>Skills</h2>
-      <p><strong>Languages:</strong> Python, JavaScript, PHP</p>
-      <p><strong>ML/DS:</strong> PyTorch, TensorFlow, Scikit-learn, Pandas</p>
-      <p><strong>Database:</strong> SQL, MySQL</p>
-      <p><strong>Tools:</strong> Git, GitHub</p>
-    </section>
-
-    <section class="competencies section">
-      <h2>Core Competencies</h2>
-      <ul>
-        <li>Problem Solving & Critical Thinking</li>
-        <li>Efficient Debugging & Troubleshooting</li>
-        <li>Quick Learning & Adaptability</li>
-        <li>Team Collaboration</li>
+      <ul class="skills-list">
+        <li>Programming: Python, JavaScript, PHP</li>
+        <li>ML/Data Science: Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy</li>
+        <li>Database: MySQL, SQL</li>
+        <li>Version Control: Git, GitHub</li>
+        <li>Other Expertise: Data Structures, Algorithms, OOP</li>
       </ul>
     </section>
 
-    <footer>
-      <div class="social">
-        <a href="https://linkedin.com/in/aymon123" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Aminul-Islam4" target="_blank">GitHub</a>
-        <a href="aminul.edu123@gmail.com" target="_blank">Email</a>
-      </div>
-      <p>&copy; 2025 Aminul Islam. All rights reserved.</p>
-    </footer>
+    <section id="core" class="section fade-in">
+      <h2>Core Competencies</h2>
+      <ul class="competencies-list">
+        <li>Critical Thinking: Solves complex problems efficiently and logically.</li>
+        <li>Adaptability: Quickly adopts new tools and responds to feedback.</li>
+        <li>Debugging & Troubleshooting: Identifies and resolves issues effectively.</li>
+        <li>Technical Expertise: Develops impactful, optimized solutions.</li>
+      </ul>
+    </section>
   </main>
 
+  <footer>
+    <p>© 2025 Aminul Islam. All rights reserved.</p>
+  </footer>
+
   <script>
-    ScrollReveal().reveal('.section', {
-      duration: 1000,
-      origin: 'bottom',
-      distance: '50px',
-      easing: 'ease-in-out',
-      reset: true
+    // Dark mode toggle logic
+    const toggleBtn = document.getElementById("toggle-theme");
+    const root = document.documentElement;
+
+    toggleBtn.addEventListener("click", () => {
+      if (root.classList.contains("dark")) {
+        root.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      } else {
+        root.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      }
     });
 
-    document.getElementById("toggle-theme").addEventListener("click", function () {
-      document.body.classList.toggle("dark");
+    // Load saved theme on page load
+    document.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem("theme") === "dark") {
+        root.classList.add("dark");
+      }
+    });
+
+    // Animate fade-in sections on scroll
+    const faders = document.querySelectorAll(".fade-in");
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -100px 0px" };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach((fader) => {
+      appearOnScroll.observe(fader);
     });
   </script>
 </body>
-
 </html>
