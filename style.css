@@ -56,13 +56,16 @@ body.dark .dynamic-typing {
 }
 
 #theme-toggle {
-  margin-top: 15px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
   font-size: 1.8rem;
   cursor: pointer;
   transition: color 0.3s ease;
   color: var(--accent-color);
+  z-index: 1000; /* Make sure it's above other content */
 }
 
 /* Contact Icons */
