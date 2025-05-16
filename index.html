@@ -2,100 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aminul Islam | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aminul Islam - Portfolio</title>
+
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
     <div class="container">
       <h1>Aminul Islam</h1>
-      <h2 class="typing" id="typing-text"></h2>
-      <div class="contact-links">
-        <a href="mailto:aminul.edu123@gmail.com" target="_blank"><img src="https://img.icons8.com/ios-filled/30/email.png" alt="Email" /></a>
-        <a href="https://linkedin.com/in/aymon123" target="_blank"><img src="https://img.icons8.com/ios-filled/30/linkedin.png" alt="LinkedIn" /></a>
-        <a href="https://github.com/Aminul-Islam4" target="_blank"><img src="https://img.icons8.com/ios-filled/30/github.png" alt="GitHub" /></a>
-      </div>
-      <button class="theme-toggle">🌗 Toggle Theme</button>
+      <p class="dynamic-typing"></p>
+      <button id="theme-toggle" aria-label="Dark/light mode">🌙</button>
     </div>
   </header>
 
-  <section class="about">
+  <section class="contact" data-aos="fade-up">
     <div class="container">
-      <h2>About Me</h2>
+      <p>Email: <a href="mailto:aminul.edu123@gmail.com">aminul.edu123@gmail.com</a></p>
       <p>
-        I am a final-year Computer Science student at BRAC University with a strong passion for Artificial Intelligence and Machine Learning. My expertise lies in developing AI-powered applications using Python and frameworks like PyTorch and TensorFlow. I have a solid foundation in data structures, algorithms, and object-oriented programming. I am eager to apply my skills to solve real-world problems and contribute to innovative projects.
+        LinkedIn:
+        <a href="https://linkedin.com/in/aymon123" target="_blank" rel="noopener">linkedin.com/in/aymon123</a>
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/Aminul-Islam4" target="_blank" rel="noopener">github.com/Aminul-Islam4</a>
+      </p>
+      <p>Location: Dhaka , Bangladesh</p>
+    </div>
+  </section>
+
+  <section class="about" data-aos="fade-up" data-aos-delay="100">
+    <div class="container">
+      <h2>Summary</h2>
+      <p>
+        Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications. Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and Hugging Face Transformers. Passionate about solving real-world problems through data-driven solutions and quick to adapt to new technologies.
       </p>
     </div>
   </section>
 
-  <section class="education">
+  <section class="education" data-aos="fade-up" data-aos-delay="200">
     <div class="container">
       <h2>Education</h2>
       <ul>
-        <li><strong>BRAC University</strong> – B.Sc. in Computer Science (2020–May 2025)</li>
-        <li><strong>Dhaka Imperial College</strong> – Higher Secondary Certificate (Science) (2017–2019)</li>
-        <li><strong>National Ideal School</strong> – Secondary School Certificate (Science) (2016–2017)</li>
+        <li>
+          <div class="edu-left">
+            <h3>BRAC University</h3>
+            <p>Bachelor of Science in Computer Science</p>
+          </div>
+          <div class="edu-right">2020 – May 2025</div>
+        </li>
+        <li>
+          <div class="edu-left">
+            <h3>Dhaka Imperial College</h3>
+            <p>Higher Secondary Certificate (Science)</p>
+          </div>
+          <div class="edu-right">2017 – 2019</div>
+        </li>
+        <li>
+          <div class="edu-left">
+            <h3>National Ideal School</h3>
+            <p>Secondary School Certificate (Science)</p>
+          </div>
+          <div class="edu-right">2016 – 2017</div>
+        </li>
       </ul>
     </div>
   </section>
 
-  <section class="projects">
+  <section class="projects" data-aos="fade-up" data-aos-delay="300">
     <div class="container">
       <h2>Projects</h2>
       <div class="project-grid">
-        <div class="project-card">
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="350">
+          <h3>AI-Powered Academic Assessment Portal</h3>
+          <p>Developed an AI-driven academic self-assessment platform using mT5 and Bangla Sentence Transformer models.</p>
+          <a href="https://github.com/Aminul-Islam4/ai-assessment" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
           <h3>Plant Disease Detection</h3>
-          <p>Image classification using ResNet-18 and transfer learning.</p>
-          <a href="https://github.com/Aminul-Islam4/plant-disease-detection" target="_blank">View on GitHub</a>
+          <p>Image classification using ResNet-18 with transfer learning.</p>
+          <a href="https://github.com/Aminul-Islam4/plant-disease-detection" target="_blank" rel="noopener">View on GitHub</a>
         </div>
-        <div class="project-card">
-          <h3>Dijkstra's Algorithm</h3>
-          <p>Python-based shortest path calculator using Dijkstra's algorithm.</p>
-          <a href="https://github.com/Aminul-Islam4/dijkstra-algorithm" target="_blank">View on GitHub</a>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="450">
+          <h3>Online Payment Fraud Detection System</h3>
+          <p>Built fraud detection using Logistic Regression, Naive Bayes, and KNN classifiers with 99% accuracy.</p>
+          <a href="https://github.com/Aminul-Islam4/fraud-detection" target="_blank" rel="noopener">View on GitHub</a>
         </div>
-        <div class="project-card">
-          <h3>Bug Tracker</h3>
-          <p>Role-based web app to manage and report bugs efficiently.</p>
-          <a href="https://github.com/Aminul-Islam4/bug-tracker" target="_blank">View on GitHub</a>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="500">
+          <h3>Bug Tracking and Management System</h3>
+          <p>Role-based web app for bug tracking with admin and user roles.</p>
+          <a href="#" target="_blank" rel="noopener">View on GitHub</a>
         </div>
-        <div class="project-card">
-          <h3>Seed Sowing Robot</h3>
-          <p>Autonomous robot for farming tasks like seed sowing and watering.</p>
-          <a href="https://github.com/Aminul-Islam4/seed-sowing-robot" target="_blank">View on GitHub</a>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="550">
+          <h3>Dijkstra’s Algorithm for Shortest Path</h3>
+          <p>Python implementation of shortest path algorithm.</p>
+          <a href="#" target="_blank" rel="noopener">View on GitHub</a>
         </div>
-        <div class="project-card">
-          <h3>Fraud Detection System</h3>
-          <p>AI system using KNN and Logistic Regression to detect payment fraud.</p>
-          <a href="https://github.com/Aminul-Islam4/fraud-detection" target="_blank">View on GitHub</a>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="600">
+          <h3>Automatic Seed Sowing Robot</h3>
+          <p>Designed autonomous seed sowing robot with obstacle avoidance.</p>
+          <a href="#" target="_blank" rel="noopener">View on GitHub</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="skills">
+  <section class="research" data-aos="fade-up" data-aos-delay="400">
+    <div class="container">
+      <h2>Research Experience</h2>
+      <p>Comparative Analysis of CNN and RNN for Bangla Handwritten Character Recognition, presented at AIMLA 2025 in association with IEEE and East Carolina University, USA.</p>
+    </div>
+  </section>
+
+  <section class="skills" data-aos="fade-up" data-aos-delay="500">
     <div class="container">
       <h2>Skills</h2>
-      <ul class="skills-list">
+      <ul class="skill-list">
         <li>Python</li>
         <li>JavaScript</li>
         <li>PHP</li>
+        <li>Scikit-learn</li>
         <li>TensorFlow</li>
         <li>PyTorch</li>
-        <li>Scikit-learn</li>
+        <li>Pandas</li>
+        <li>NumPy</li>
         <li>MySQL</li>
+        <li>SQL</li>
         <li>Git & GitHub</li>
         <li>Data Structures & Algorithms</li>
-        <li>Object-Oriented Programming</li>
+        <li>OOP</li>
       </ul>
     </div>
   </section>
 
-  <footer>
+  <footer data-aos="fade-up" data-aos-delay="600">
     <div class="container">
-      <p>&copy; 2025 Aminul Islam. All rights reserved.</p>
+      <p>© 2025 Aminul Islam. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
