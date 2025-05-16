@@ -1,117 +1,135 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aminul Islam | Developer Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <header class="header">
-    <div class="container">
-      <h1>Aminul Islam</h1>
-      <p class="email">aminul.edu123@gmail.com</p>
-      <div class="socials">
-        <a href="https://github.com/Aminul-Islam4" target="_blank">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" />
-        </a>
-        <a href="https://linkedin.com/in/aymon123" target="_blank">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" />
-        </a>
-        <span class="address">West Rampura, Dhaka-1219</span>
-        <button class="toggle-btn" onclick="toggleTheme()">🌓</button>
-      </div>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aminul Islam - Portfolio</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Toggle Dark Mode -->
+    <div class="fixed top-4 right-4 z-50">
+      <button
+        onclick="document.documentElement.classList.toggle('dark')"
+        class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-4 py-2 rounded shadow"
+      >
+        Toggle Dark Mode
+      </button>
     </div>
-  </header>
 
-  <main class="container">
-    <section>
-      <h2>Summary</h2>
+    <!-- Header -->
+    <header class="text-center py-12 bg-gray-100 dark:bg-gray-800">
+      <img src="avatar.png" alt="Profile Picture" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-gray-300 dark:border-gray-700" />
+      <h1 class="text-4xl font-bold">Aminul Islam</h1>
+      <p class="text-lg mt-2">Computer Science Graduate | Machine Learning Enthusiast</p>
+      <nav class="mt-4">
+        <ul class="flex justify-center gap-6 text-sm font-medium">
+          <li><a href="#summary" class="hover:underline">Summary</a></li>
+          <li><a href="#education" class="hover:underline">Education</a></li>
+          <li><a href="#projects" class="hover:underline">Projects</a></li>
+          <li><a href="#skills" class="hover:underline">Skills</a></li>
+          <li><a href="#competencies" class="hover:underline">Core Competencies</a></li>
+        </ul>
+      </nav>
+      <div class="flex justify-center gap-4 mt-4 text-xl">
+        <a href="mailto:aminul.edu123@gmail.com" class="hover:underline">Email</a>
+        <a href="https://github.com/Aminul-Islam4" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/aymon123" target="_blank">LinkedIn</a>
+        <span class="text-sm hidden md:inline">📍 West Rampura, Dhaka</span>
+      </div>
+    </header>
+
+    <!-- Summary -->
+    <section id="summary" class="max-w-4xl mx-auto px-4 py-8">
+      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Summary</h2>
       <p>
-        Computer Science graduate from BRAC University with expertise in Python, data structures, algorithms, and machine learning. Passionate about building AI-powered solutions, web applications, and solving real-world problems using data.
+        Computer Science graduate from BRAC University with experience in ML and AI-powered applications.
+        Proficient in Python, data structures, algorithms, and OOP. Skilled in PyTorch, TensorFlow, Scikit-learn,
+        and Hugging Face Transformers. Passionate about real-world problem solving through data-driven solutions.
       </p>
     </section>
 
-    <section>
-      <h2>Education</h2>
-      <div class="edu">
-        <div>
-          <h3>BRAC University</h3>
-          <p>BSc in Computer Science</p>
+    <!-- Education -->
+    <section id="education" class="max-w-4xl mx-auto px-4 py-8">
+      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Education</h2>
+      <div class="space-y-4">
+        <div class="flex justify-between">
+          <span><strong>BRAC University</strong> – BSc in Computer Science</span>
+          <span>2020 – 2025</span>
         </div>
-        <span>2020 – 2025</span>
-      </div>
-      <div class="edu">
-        <div>
-          <h3>Dhaka Imperial College</h3>
-          <p>HSC (Science)</p>
+        <div class="flex justify-between">
+          <span><strong>Dhaka Imperial College</strong> – HSC (Science)</span>
+          <span>2017 – 2019</span>
         </div>
-        <span>2017 – 2019</span>
-      </div>
-      <div class="edu">
-        <div>
-          <h3>National Ideal School</h3>
-          <p>SSC (Science)</p>
+        <div class="flex justify-between">
+          <span><strong>National Ideal School</strong> – SSC (Science)</span>
+          <span>2016 – 2017</span>
         </div>
-        <span>2016 – 2017</span>
       </div>
     </section>
 
-    <section>
-      <h2>Projects</h2>
-      <ul>
+    <!-- Projects -->
+    <section id="projects" class="max-w-4xl mx-auto px-4 py-8">
+      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Projects</h2>
+      <ul class="space-y-4 list-disc list-inside">
         <li>
-          <strong>AI-Powered Academic Assessment Portal</strong> – Built with mT5, Sentence Transformers for self-assessment and performance tracking.
+          <strong>AI-Powered Academic Assessment Portal</strong> – mT5 & Bangla Sentence Transformer for self-evaluation.
         </li>
         <li>
-          <strong>Plant Disease Detection</strong> – Used ResNet-18 with transfer learning in PyTorch.
+          <strong>Plant Disease Detection</strong> – ResNet-18 with transfer learning for image classification.
         </li>
         <li>
-          <strong>Online Fraud Detection System</strong> – Logistic Regression, Naive Bayes, and KNN.
+          <strong>Online Payment Fraud Detection</strong> – 99% accuracy using KNN, Logistic Regression, Naive Bayes.
         </li>
         <li>
-          <strong>Bug Tracking System</strong> – Role-based bug tracker using HTML, CSS, PHP, MySQL.
+          <strong>Bug Tracking System</strong> – Web-based role-specific bug tracking using PHP & MySQL.
         </li>
         <li>
-          <strong>Dijkstra’s Shortest Path Tool</strong> – Built with Python and `python-docx`.
+          <strong>Dijkstra’s Algorithm Tool</strong> – Python-based shortest path visualizer.
         </li>
         <li>
-          <strong>Automatic Seed Sowing Robot</strong> – Arduino + C++ + hardware.
+          <strong>Automatic Seed Sowing Robot</strong> – Autonomous bot with IR, Ultrasonic, Servo, Water Pump.
         </li>
       </ul>
     </section>
 
-    <section>
-      <h2>Skills</h2>
-      <ul class="skills">
-        <li>Python</li>
-        <li>JavaScript</li>
-        <li>PHP</li>
-        <li>PyTorch</li>
-        <li>TensorFlow</li>
-        <li>Scikit-learn</li>
-        <li>SQL / MySQL</li>
-        <li>Git & GitHub</li>
-        <li>HTML / CSS</li>
-      </ul>
+    <!-- Skills -->
+    <section id="skills" class="max-w-4xl mx-auto px-4 py-8">
+      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <span>Python</span>
+        <span>JavaScript</span>
+        <span>PHP</span>
+        <span>PyTorch</span>
+        <span>TensorFlow</span>
+        <span>MySQL</span>
+        <span>Scikit-learn</span>
+        <span>Git/GitHub</span>
+        <span>OOP</span>
+      </div>
     </section>
 
-    <section>
-      <h2>Core Competencies</h2>
-      <ul>
-        <li>Critical Thinking & Problem Solving</li>
-        <li>Adaptability to Tools & Technologies</li>
+    <!-- Core Competencies -->
+    <section id="competencies" class="max-w-4xl mx-auto px-4 py-8">
+      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Core Competencies</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Critical Thinking</li>
+        <li>Adaptability</li>
         <li>Debugging & Troubleshooting</li>
-        <li>Clean Code & Best Practices</li>
+        <li>Technical Expertise</li>
       </ul>
     </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Aminul Islam. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
+    <!-- Footer -->
+    <footer class="text-center py-6 mt-10 text-sm text-gray-500">
+      &copy; 2025 Aminul Islam. All rights reserved.
+    </footer>
+  </body>
 </html>
