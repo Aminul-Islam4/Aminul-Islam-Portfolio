@@ -28,7 +28,7 @@ const phrases = [
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-const typingSpeed = 100;
+const typingSpeed = 201;
 const pauseBetweenPhrases = 2000;
 
 function type() {
