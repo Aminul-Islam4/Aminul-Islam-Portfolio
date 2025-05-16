@@ -3,7 +3,6 @@ const themeToggleBtn = document.getElementById('theme-toggle');
 
 themeToggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark');
-  // Toggle button icon
   if (document.body.classList.contains('dark')) {
     themeToggleBtn.textContent = '☀️';
   } else {
@@ -15,10 +14,10 @@ themeToggleBtn.addEventListener('click', () => {
 AOS.init({
   duration: 800,
   easing: 'ease-in-out',
-  once: true, // animation happens only once on scroll
+  once: true,
 });
 
-// Dynamic typing effect for header
+// Dynamic typing effect
 const dynamicTyping = document.querySelector('.dynamic-typing');
 const phrases = [
   'Aspiring AI & Machine Learning Engineer',
@@ -29,11 +28,12 @@ const phrases = [
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let typingSpeed = 100;
-let pauseBetweenPhrases = 2000;
+const typingSpeed = 100;
+const pauseBetweenPhrases = 2000;
 
 function type() {
   const currentPhrase = phrases[phraseIndex];
+
   if (!isDeleting) {
     dynamicTyping.textContent = currentPhrase.substring(0, charIndex + 1);
     charIndex++;
@@ -46,6 +46,7 @@ function type() {
   } else {
     dynamicTyping.textContent = currentPhrase.substring(0, charIndex - 1);
     charIndex--;
+
     if (charIndex === 0) {
       isDeleting = false;
       phraseIndex = (phraseIndex + 1) % phrases.length;
@@ -54,5 +55,7 @@ function type() {
   setTimeout(type, typingSpeed);
 }
 
-// Start the typing effect
-type();
+// Start typing effect after DOM loaded
+document.addEventListener('DOMContentLoaded', () => {
+  type();
+});
