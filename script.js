@@ -2,16 +2,33 @@ const themeToggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 const icon = themeToggleBtn.querySelector('i');
 
-// Check saved theme in localStorage and apply it
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  body.classList.toggle('dark', savedTheme === 'dark');
-  icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+function setTheme(theme) {
+  if (theme === 'dark') {
+    body.classList.add('dark');
+    icon.classList.replace('fa-moon', 'fa-sun');
+  } else {
+    body.classList.remove('dark');
+    icon.classList.replace('fa-sun', 'fa-moon');
+  }
+  localStorage.setItem('theme', theme);
 }
 
-// Toggle theme on button click
+// Initialize theme based on previous choice or system preference
+(function () {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    // System preference fallback
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+})();
+
 themeToggleBtn.addEventListener('click', () => {
-  const isDark = body.classList.toggle('dark');
-  icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  if (body.classList.contains('dark')) {
+    setTheme('light');
+  } else {
+    setTheme('dark');
+  }
 });
