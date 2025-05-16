@@ -1,114 +1,315 @@
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aminul Islam - Developer Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aminul Islam - Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    [data-theme='dark'] {
+      --bg-color: #121212;
+      --text-color: #f3f4f6;
+      --card-bg: #1e1e1e;
+      --accent-color: #3b82f6;
+    }
+
+    [data-theme='light'] {
+      --bg-color: #f9fafb;
+      --text-color: #111827;
+      --card-bg: #ffffff;
+      --accent-color: #3b82f6;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      border-radius: 0.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 15px rgb(59 130 246 / 0.4);
+    }
+
+    a {
+      color: var(--accent-color);
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #2563eb;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--accent-color);
+      border-radius: 10px;
+    }
+
+    .container {
+      max-width: 900px;
+    }
+  </style>
 </head>
 
-<body>
-  <header>
-    <nav>
-      <h1>Aminul Islam</h1>
-      <div class="social-icons">
-        <a href="mailto:aminul.edu123@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/Aminul-Islam4" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/aymon123" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </div>
-      <button id="toggle-theme">Toggle Dark Mode</button>
-    </nav>
-    <p class="location">📍 Dhaka, Bangladesh</p>
+<body class="min-h-screen flex flex-col items-center px-5 py-8 container mx-auto">
+
+  <!-- HEADER -->
+  <header class="w-full flex flex-col md:flex-row justify-between items-center mb-12">
+    <h1 class="text-4xl font-extrabold mb-4 md:mb-0">Aminul Islam</h1>
+    <div class="flex space-x-6 text-xl text-gray-500 dark:text-gray-400">
+      <a
+        href="mailto:aminul.edu123@gmail.com"
+        aria-label="Email"
+        class="hover:text-blue-600 transition"
+        ><i class="fa-solid fa-envelope"></i
+      ></a>
+      <a
+        href="https://github.com/Aminul-Islam4"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+        class="hover:text-blue-600 transition"
+        ><i class="fa-brands fa-github"></i
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/aymon123"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        class="hover:text-blue-600 transition"
+        ><i class="fa-brands fa-linkedin"></i
+      ></a>
+      <span class="hidden sm:inline-flex items-center space-x-1 text-gray-400">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Dhaka, Bangladesh</span>
+      </span>
+    </div>
   </header>
 
-  <main>
-    <section class="summary">
-      <h2>Summary</h2>
-      <p>
-        Computer Science graduate (final defense pending) from BRAC University with experience in ML and AI applications.
-        Proficient in Python, data structures, and deep learning. Passionate about building scalable tech solutions.
-      </p>
-    </section>
+  <!-- DARK MODE TOGGLE -->
+  <div class="mb-8 self-end">
+    <button
+      id="toggle-theme"
+      class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition"
+      aria-label="Toggle Dark Mode"
+    >
+      Toggle Dark Mode
+    </button>
+  </div>
 
-    <section class="education">
-      <h2>Education</h2>
-      <div class="edu-item">
-        <h3>BRAC University <span>2020 – May 2025</span></h3>
-        <p>Bachelor of Science in Computer Science</p>
-      </div>
-      <div class="edu-item">
-        <h3>Dhaka Imperial College <span>2017 – 2019</span></h3>
-        <p>Higher Secondary Certificate (Science)</p>
-      </div>
-      <div class="edu-item">
-        <h3>National Ideal School <span>2016 – 2017</span></h3>
-        <p>Secondary School Certificate (Science)</p>
-      </div>
-    </section>
+  <!-- SUMMARY -->
+  <section
+    id="summary"
+    class="mb-12 max-w-3xl"
+    data-aos="fade-up"
+    data-aos-duration="800"
+  >
+    <h2 class="text-2xl font-semibold mb-4 border-b-2 border-blue-600 inline-block">
+      Summary
+    </h2>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+      Computer Science graduate (final defense pending) from BRAC University with experience in machine learning and AI-powered applications. Proficient in Python, data structures, algorithms, and OOP, with hands-on skills in PyTorch, TensorFlow, Keras, Scikit-learn, Matplotlib, and Hugging Face Transformers. Passionate about solving real-world problems through data-driven solutions and quick to adapt to new technologies.
+    </p>
+  </section>
 
-    <section class="projects">
-      <h2>Projects</h2>
-      <div class="project-card">
-        <h3>Plant Disease Detection</h3>
-        <p>Transfer learning with ResNet-18 to identify plant diseases accurately.</p>
-        <a href="https://github.com/Aminul-Islam4/Plant-Disease-Detection" target="_blank">View on GitHub</a>
+  <!-- EDUCATION -->
+  <section
+    id="education"
+    class="mb-12 max-w-3xl"
+    data-aos="fade-up"
+    data-aos-duration="900"
+  >
+    <h2 class="text-2xl font-semibold mb-6 border-b-2 border-blue-600 inline-block">
+      Education
+    </h2>
+    <div class="space-y-6">
+      <div class="flex justify-between items-center">
+        <h3 class="font-semibold text-lg">BRAC University</h3>
+        <time class="text-gray-500 dark:text-gray-400 text-sm">2020 – May 2025</time>
       </div>
-      <div class="project-card">
-        <h3>Dijkstra Pathfinder</h3>
-        <p>Python app to visualize shortest path using Dijkstra's Algorithm.</p>
-        <a href="https://github.com/Aminul-Islam4/python-dijkstra-pathfinder" target="_blank">View on GitHub</a>
-      </div>
-      <div class="project-card">
-        <h3>Bug Tracker</h3>
-        <p>Web-based bug management system with user roles and reporting.</p>
-        <a href="https://github.com/Aminul-Islam4/Bug-Tracker" target="_blank">View on GitHub</a>
-      </div>
-      <div class="project-card">
-        <h3>Automatic Seed Sowing Robot</h3>
-        <p>Autonomous robot for precision seed sowing and obstacle avoidance.</p>
-        <a href="https://github.com/Aminul-Islam4/-Automatic-Seed-Sowing-Robot" target="_blank">View on GitHub</a>
-      </div>
-      <div class="project-card">
-        <h3>Fraud Detection System</h3>
-        <p>ML models to detect fraudulent transactions in payment systems.</p>
-        <a href="https://github.com/Aminul-Islam4/-Online-Payment-Fraud-Detection-System" target="_blank">View on GitHub</a>
-      </div>
-    </section>
+      <p class="italic text-gray-600 dark:text-gray-400">Bachelor of Science in Computer Science</p>
 
-    <section class="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Python, JavaScript, PHP</li>
-        <li>Scikit-learn, TensorFlow, PyTorch</li>
-        <li>MySQL, SQL, Git/GitHub</li>
-        <li>Data Structures, Algorithms, OOP</li>
-      </ul>
-    </section>
+      <div class="flex justify-between items-center">
+        <h3 class="font-semibold text-lg">Dhaka Imperial College</h3>
+        <time class="text-gray-500 dark:text-gray-400 text-sm">2017 – 2019</time>
+      </div>
+      <p class="italic text-gray-600 dark:text-gray-400">Higher Secondary Certificate (Science)</p>
 
-    <section class="competencies">
-      <h2>Core Competencies</h2>
-      <ul>
-        <li>Critical Thinking</li>
-        <li>Debugging & Troubleshooting</li>
-        <li>Adaptability</li>
-        <li>Technical Expertise</li>
-      </ul>
-    </section>
-  </main>
+      <div class="flex justify-between items-center">
+        <h3 class="font-semibold text-lg">National Ideal School</h3>
+        <time class="text-gray-500 dark:text-gray-400 text-sm">2016 – 2017</time>
+      </div>
+      <p class="italic text-gray-600 dark:text-gray-400">Secondary School Certificate (Science)</p>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Aminul Islam. All rights reserved.</p>
-  </footer>
+  <!-- PROJECTS -->
+  <section
+    id="projects"
+    class="mb-12 max-w-5xl"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
+    <h2 class="text-2xl font-semibold mb-6 border-b-2 border-blue-600 inline-block">
+      Projects
+    </h2>
+    <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Project 1 -->
+      <article class="card p-6">
+        <h3 class="font-semibold text-xl mb-2">AI-Powered Academic Assessment Portal with Performance Tracking</h3>
+        <p class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+          Developed an AI-driven academic self-assessment platform by integrating pre-trained mT5 and Bangla Sentence Transformer models using Hugging Face Transformers.
+        </p>
+        <p class="italic text-sm text-gray-500 mb-3">Tech: Python, mT5, Sentence Transformer, PyTorch, Pandas</p>
+        <span class="text-gray-500 italic text-sm">No GitHub link available</span>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card p-6">
+        <h3 class="font-semibold text-xl mb-2">Image Classification using ResNet-18 and Transfer Learning for Plant Disease Detection</h3>
+        <p class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+          Developed a plant disease detection model using ResNet-18 with transfer learning, achieving high accuracy and enabling custom image prediction.
+        </p>
+        <p class="italic text-sm text-gray-500 mb-3">Tech: PyTorch, torchvision, Google Colab, Python, Transfer Learning, Matplotlib</p>
+        <a href="https://github.com/Aminul-Islam4/Plant-Disease-Detection" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">GitHub Repo</a>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card p-6">
+        <h3 class="font-semibold text-xl mb-2">Online Payment Fraud Detection System</h3>
+        <p class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+          Built a fraud detection system using Logistic Regression, Naive Bayes, and KNN classifiers. Achieved 99% accuracy with KNN and evaluated model metrics with F1-score.
+        </p>
+        <p class="italic text-sm text-gray-500 mb-3">Tech: Python, Scikit-learn, Pandas, NumPy, Matplotlib</p>
+        <a href="https://github.com/Aminul-Islam4/-Online-Payment-Fraud-Detection-System" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">GitHub Repo</a>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="card p-6">
+        <h3 class="font-semibold text-xl mb-2">Dijkstra Pathfinder Algorithm in Python</h3>
+        <p class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+          Implemented Dijkstra’s algorithm for shortest pathfinding on weighted graphs with a visual demonstration in Python.
+        </p>
+        <p class="italic text-sm text-gray-500 mb-3">Tech: Python, Algorithms, Graph Theory</p>
+        <a href="https://github.com/Aminul-Islam4/python-dijkstra-pathfinder" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">GitHub Repo</a>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="card p-6">
+        <h3 class="font-semibold text-xl mb-2">Bug Tracker Application</h3>
+        <p class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+          Developed a full-stack bug tracking system to manage and track software bugs efficiently.
+        </p>
+        <p class="italic text-sm text-gray-500 mb-3">Tech: React, Node.js, Express, MongoDB</p>
+        <a href="https://github.com/Aminul-Islam4/Bug-Tracker" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">GitHub Repo</a>
+      </article>
+
+      <!-- Project 6 -->
+      <article class="card p-6">
+        <h3 class="font-semibold text-xl mb-2">Automatic Seed Sowing Robot</h3>
+        <p class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+          Designed and implemented a robotic system for automatic seed sowing to optimize agricultural efficiency.
+        </p>
+        <p class="italic text-sm text-gray-500 mb-3">Tech: Robotics, Arduino, Embedded Systems</p>
+        <a href="https://github.com/Aminul-Islam4/-Automatic-Seed-Sowing-Robot" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">GitHub Repo</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section
+    id="skills"
+    class="mb-12 max-w-3xl"
+    data-aos="fade-up"
+    data-aos-duration="1100"
+  >
+    <h2 class="text-2xl font-semibold mb-6 border-b-2 border-blue-600 inline-block">
+      Skills
+    </h2>
+    <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700 dark:text-gray-300">
+      <li>Python</li>
+      <li>Machine Learning</li>
+      <li>Deep Learning</li>
+      <li>PyTorch</li>
+      <li>TensorFlow</li>
+      <li>Scikit-learn</li>
+      <li>Data Science</li>
+      <li>Computer Vision</li>
+      <li>Frontend Development</li>
+      <li>Backend Development</li>
+      <li>React</li>
+      <li>Node.js</li>
+    </ul>
+  </section>
+
+  <!-- CORE COMPETENCIES -->
+  <section
+    id="competencies"
+    class="mb-12 max-w-3xl"
+    data-aos="fade-up"
+    data-aos-duration="1200"
+  >
+    <h2 class="text-2xl font-semibold mb-6 border-b-2 border-blue-600 inline-block">
+      Core Competencies
+    </h2>
+    <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+      <li>Strong analytical and problem-solving skills</li>
+      <li>Quick learner and highly adaptable to new technologies</li>
+      <li>Effective communication and teamwork</li>
+      <li>Passion for innovation and research</li>
+      <li>Detail-oriented and quality-focused software engineering</li>
+    </ul>
+  </section>
 
   <script>
-    const toggleBtn = document.getElementById("toggle-theme");
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
+    // Initialize AOS
+    AOS.init();
+
+    // Dark Mode Toggle Logic
+    const toggleBtn = document.getElementById('toggle-theme');
+    const htmlElem = document.documentElement;
+
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      htmlElem.setAttribute('data-theme', savedTheme);
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlElem.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      htmlElem.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
     });
   </script>
-</body>
 
+</body>
 </html>
