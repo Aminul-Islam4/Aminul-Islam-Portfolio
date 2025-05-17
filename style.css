@@ -1,8 +1,3 @@
-
-
-
-
-/* Root colors - Extended color palette */
 :root {
   --background-light: #f9f9f9;
   --background-dark: #121212;
@@ -732,4 +727,3 @@ body.dark footer p {
 body.dark .custom-shape-divider .shape-fill {
   fill: var(--card-dark);
 }
-
