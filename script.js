@@ -48,12 +48,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Enhanced Dynamic typing effect with smoother transitions
 const dynamicTyping = document.querySelector('.dynamic-typing');
+
+
+
 const phrases = [
   'Aspiring AI & Machine Learning Engineer',
-  'Proficient in Python, SQL, and Data Structures',
-  'Skilled in Developing ML Models and AI Solutions',
-  'Passionate about Solving Real-World Problems'
+  'Proficient in Python, SQL, Data Structures & Algorithms',
+  'Experienced with TensorFlow, PyTorch, and Scikit-learn',
+  'Hands-On with Hugging Face Transformers',
+  'Passionate About Solving Real-World Challenges',
+  'Driven to Build Scalable, Intelligent Systems',
+'Committed to Continuous Learning and Innovation'
 ];
+
+
+
 
 let phraseIndex = 0;
 let charIndex = 0;
