@@ -138,8 +138,8 @@ const initCustomCursor = () => {
   const lerp = (start, end, factor) => start + (end - start) * factor;
   
   const animateCursor = () => {
-    cursorX = lerp(cursorX, mouseX, 0.15);
-    cursorY = lerp(cursorY, mouseY, 0.15);
+    cursorX = lerp(cursorX, mouseX, 1.00);
+    cursorY = lerp(cursorY, mouseY, 1.00);
     
     cursorElement.style.left = `${cursorX}px`;
     cursorElement.style.top = `${cursorY}px`;
