@@ -123,31 +123,12 @@ const initCustomCursor = () => {
   }
   
   const cursorElement = document.querySelector('.custom-cursor');
-  let mouseX = 0;
-  let mouseY = 0;
-  let cursorX = 0;
-  let cursorY = 0;
   
-  // Track mouse position
+  // Direct positioning - no smoothing for natural feel
   document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    cursorElement.style.left = `${e.clientX}px`;
+    cursorElement.style.top = `${e.clientY}px`;
   });
-  
-  // Smooth cursor follow with lerp (linear interpolation)
-  const lerp = (start, end, factor) => start + (end - start) * factor;
-  
-  const animateCursor = () => {
-    cursorX = lerp(cursorX, mouseX, 1.00);
-    cursorY = lerp(cursorY, mouseY, 1.00);
-    
-    cursorElement.style.left = `${cursorX}px`;
-    cursorElement.style.top = `${cursorY}px`;
-    
-    requestAnimationFrame(animateCursor);
-  };
-  
-  animateCursor();
   
   // Add hover effect for interactive elements
   const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-list li');
