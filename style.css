@@ -473,6 +473,75 @@ body.dark .research p::before {
   background: var(--accent-gradient-dark);
 }
 
+/* Research paper link button */
+.research-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.75rem;
+  margin-top: var(--spacing-md);
+  margin-left: var(--spacing-lg);
+  background: transparent;
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid var(--accent-primary);
+  border-radius: 8px;
+  transition: all 0.3s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+body.dark .research-link {
+  color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+}
+
+.research-link i {
+  font-size: 1.1rem;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.research-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-gradient);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s var(--ease-out-expo);
+  z-index: -1;
+}
+
+body.dark .research-link::before {
+  background: var(--accent-gradient-dark);
+}
+
+.research-link:hover {
+  color: white;
+  border-color: transparent;
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+body.dark .research-link:hover {
+  box-shadow: var(--shadow-dark-md);
+}
+
+.research-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.research-link:hover i {
+  transform: translateX(3px);
+}
+
 /* Education Section - Card-based Timeline */
 .education ul {
   list-style: none;
