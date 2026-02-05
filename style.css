@@ -307,7 +307,7 @@ body.dark .dynamic-typing {
 }
 
 .dynamic-typing::after {
-  content: "▋";
+  content: "â–‹";
   animation: blink 1.2s step-end infinite;
   margin-left: 2px;
 }
@@ -957,10 +957,10 @@ body.dark footer p {
   position: fixed;
   pointer-events: none;
   transform: translate(-50%, -50%);
+  transition: all 0.15s ease;
   z-index: 9999;
   mix-blend-mode: difference;
   opacity: 0;
-  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, opacity 0.2s ease;
 }
 
 body.dark .custom-cursor {
