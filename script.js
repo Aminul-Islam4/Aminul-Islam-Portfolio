@@ -35,47 +35,42 @@ themeToggleBtn.addEventListener('click', () => {
   }, 500);
 });
 
-// Initialize AOS (Animate On Scroll) with enhanced settings
+// Initialize AOS (Animate On Scroll)
 document.addEventListener('DOMContentLoaded', () => {
   AOS.init({
     duration: 800,
     easing: 'ease-in-out',
-    once: false, // Allow animations to repeat on scroll up/down
-    mirror: true, // Whether elements should animate out while scrolling past them
+    once: false,
+    mirror: true,
     anchorPlacement: 'top-bottom',
   });
 });
 
-// Enhanced Dynamic typing effect with smoother transitions
+// Dynamic typing effect (QA-focused)
 const dynamicTyping = document.querySelector('.dynamic-typing');
 
-
-
 const phrases = [
-  'Aspiring AI & Machine Learning Engineer',
-  'Proficient in Python, SQL, Data Structures & Algorithms',
-  'Experienced with TensorFlow, PyTorch, and Scikit-learn',
-  'Hands-On with Hugging Face Transformers',
-  'Passionate About Solving Real-World Challenges',
-  'Driven to Build Scalable, Intelligent Systems',
-'Committed to Continuous Learning and Innovation'
+  'Aspiring Software Quality Assurance Engineer',
+  'Manual Testing | Automation Testing | API Testing',
+  'Experienced with Selenium, Playwright API & Postman',
+  'Skilled in Test Case Design & Defect Tracking',
+  'Strong Understanding of SDLC, STLC & Agile Scrum',
+  'Focused on Delivering Reliable, High-Quality Software',
+  'Driven by Quality, Accuracy, and Continuous Improvement'
 ];
-
-
-
 
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 let isWaiting = false;
-const typingSpeed = 85; // Base typing speed
-const erasingSpeed = 45; // Faster erasing
+
+const typingSpeed = 85;
+const erasingSpeed = 45;
 const pauseBetweenPhrases = 2000;
 
 function type() {
   const currentPhrase = phrases[phraseIndex];
   
-  // Randomize typing speed slightly for natural effect
   const speed = isDeleting 
     ? erasingSpeed 
     : isWaiting 
@@ -111,7 +106,7 @@ function type() {
 
 // Start typing effect after DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(type, 1000); // Slight delay before starting
+  setTimeout(type, 1000);
 });
 
 // Custom cursor effect (desktop only)
@@ -123,7 +118,6 @@ if (window.innerWidth > 1024) {
     cursor.style.top = e.clientY + 'px';
   });
   
-  // Scale effect on clickable elements
   document.querySelectorAll('a, button').forEach(element => {
     element.addEventListener('mouseenter', () => {
       cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
@@ -137,7 +131,7 @@ if (window.innerWidth > 1024) {
   });
 }
 
-// Add animation for project cards on hover
+// Project card hover animation
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mouseenter', () => {
     card.style.transform = 'translateY(-10px)';
@@ -148,7 +142,7 @@ document.querySelectorAll('.project-card').forEach(card => {
   });
 });
 
-// Smooth scrolling for navigation
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -162,7 +156,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Add CSS class for rotate animation
+// Rotate animation for theme toggle
 const style = document.createElement('style');
 style.textContent = `
   .rotate {
