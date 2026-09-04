@@ -260,8 +260,8 @@ body.dark header::after {
 /* Profile Photo - Circular frame with gradient ring */
 .profile-photo-wrap {
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   margin-bottom: var(--spacing-lg);
   animation: slideInUp 1s var(--ease-out-expo) backwards;
 }
