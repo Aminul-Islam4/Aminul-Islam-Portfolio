@@ -14,12 +14,23 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
+
   <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
-  
+
   <header>
     <div class="container">
       <div class="hero-content">
+        <div class="profile-photo-wrap" data-aos="zoom-in" data-aos-delay="0">
+          <!-- Replace src below with your own photo (e.g. "profile.jpg") -->
+          <img
+            src="profile.jpg"
+            alt="Aminul Islam Aymon"
+            class="profile-photo"
+            onerror="this.style.display='none'; document.querySelector('.profile-photo-fallback').style.display='flex';"
+          />
+          <div class="profile-photo-fallback">AI</div>
+        </div>
+
         <h1 data-aos="fade-down" data-aos-delay="100">Aminul Islam Aymon</h1>
         <p class="dynamic-typing" data-aos="fade-up" data-aos-delay="200">
           Software Quality Assurance Engineer | Manual & Automation Testing | API Testing
