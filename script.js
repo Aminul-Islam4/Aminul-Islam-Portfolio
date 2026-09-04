@@ -9,11 +9,11 @@ const initTheme = () => {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const body = document.body;
   const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-  
+
   // Check for saved theme preference or use OS preference
-  const currentTheme = localStorage.getItem('theme') || 
+  const currentTheme = localStorage.getItem('theme') ||
                       (prefersDarkScheme.matches ? 'dark' : 'light');
-  
+
   // Apply saved theme on page load
   if (currentTheme === 'dark') {
     body.classList.add('dark');
@@ -21,11 +21,11 @@ const initTheme = () => {
   } else {
     themeToggleBtn.textContent = '🌙 Dark';
   }
-  
+
   // Toggle theme with enhanced animation
   themeToggleBtn.addEventListener('click', () => {
     body.classList.toggle('dark');
-    
+
     if (body.classList.contains('dark')) {
       themeToggleBtn.textContent = '☀️ Light';
       localStorage.setItem('theme', 'dark');
@@ -43,7 +43,7 @@ const initTheme = () => {
 const initTypingAnimation = () => {
   const dynamicTyping = document.querySelector('.dynamic-typing');
   if (!dynamicTyping) return;
-  
+
   // Your original QA-focused phrases - preserved!
   const phrases = [
     'Aspiring Software Quality Assurance Engineer',
@@ -54,23 +54,23 @@ const initTypingAnimation = () => {
     'Focused on Delivering Reliable, High-Quality Software',
     'Driven by Quality, Accuracy, and Continuous Improvement'
   ];
-  
+
   let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
   let isWaiting = false;
-  
+
   const typingSpeed = 85;
   const erasingSpeed = 45;
   const pauseBetweenPhrases = 2000;
-  
+
   function type() {
     const currentPhrase = phrases[phraseIndex];
-    
-    const speed = isDeleting 
-      ? erasingSpeed 
-      : isWaiting 
-        ? pauseBetweenPhrases 
+
+    const speed = isDeleting
+      ? erasingSpeed
+      : isWaiting
+        ? pauseBetweenPhrases
         : typingSpeed + Math.random() * 50;
 
     if (isWaiting) {
@@ -96,10 +96,10 @@ const initTypingAnimation = () => {
         phraseIndex = (phraseIndex + 1) % phrases.length;
       }
     }
-    
+
     setTimeout(type, speed);
   }
-  
+
   // Start typing effect after a brief delay
   setTimeout(type, 1000);
 };
@@ -113,7 +113,7 @@ const initCustomCursor = () => {
   if (!window.matchMedia('(pointer: fine)').matches || window.innerWidth <= 1024) {
     return;
   }
-  
+
   const cursor = document.querySelector('.custom-cursor');
   if (!cursor) {
     // Create cursor if it doesn't exist
@@ -121,37 +121,37 @@ const initCustomCursor = () => {
     newCursor.className = 'custom-cursor';
     document.body.appendChild(newCursor);
   }
-  
+
   const cursorElement = document.querySelector('.custom-cursor');
   let mouseX = 0;
   let mouseY = 0;
   let cursorX = 0;
   let cursorY = 0;
-  
+
   // Track mouse position
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
-  
+
   // Smooth cursor follow with lerp (linear interpolation)
   const lerp = (start, end, factor) => start + (end - start) * factor;
-  
+
   const animateCursor = () => {
     cursorX = lerp(cursorX, mouseX, 1.00);
     cursorY = lerp(cursorY, mouseY, 1.00);
-    
+
     cursorElement.style.left = `${cursorX}px`;
     cursorElement.style.top = `${cursorY}px`;
-    
+
     requestAnimationFrame(animateCursor);
   };
-  
+
   animateCursor();
-  
+
   // Add hover effect for interactive elements
   const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-list li');
-  
+
   interactiveElements.forEach(el => {
     el.addEventListener('mouseenter', () => cursorElement.classList.add('hover'));
     el.addEventListener('mouseleave', () => cursorElement.classList.remove('hover'));
@@ -195,12 +195,12 @@ const initAOS = () => {
 const initScrollAnimations = () => {
   // Skip if AOS is handling animations
   if (typeof AOS !== 'undefined') return;
-  
+
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
   };
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -209,10 +209,10 @@ const initScrollAnimations = () => {
       }
     });
   }, observerOptions);
-  
+
   // Observe all major elements
   const animatedElements = document.querySelectorAll('.project-card, .education li');
-  
+
   animatedElements.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
@@ -228,11 +228,11 @@ const initScrollAnimations = () => {
 const initSkillsReveal = () => {
   const skillsList = document.querySelector('.skill-list');
   if (!skillsList) return;
-  
+
   const observerOptions = {
     threshold: 0.3
   };
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -247,14 +247,14 @@ const initSkillsReveal = () => {
       }
     });
   }, observerOptions);
-  
+
   const skills = skillsList.querySelectorAll('li');
   skills.forEach(skill => {
     skill.style.opacity = '0';
     skill.style.transform = 'translateY(20px) scale(0.9)';
     skill.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
   });
-  
+
   observer.observe(skillsList);
 };
 
@@ -265,12 +265,12 @@ const initSkillsReveal = () => {
 const initTimelineAnimation = () => {
   const educationItems = document.querySelectorAll('.education li');
   if (!educationItems.length) return;
-  
+
   const observerOptions = {
     threshold: 0.2,
     rootMargin: '0px 0px -50px 0px'
   };
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
@@ -282,7 +282,7 @@ const initTimelineAnimation = () => {
       }
     });
   }, observerOptions);
-  
+
   educationItems.forEach(item => {
     item.style.opacity = '0';
     item.style.transform = 'translateX(-30px)';
@@ -298,9 +298,9 @@ const initTimelineAnimation = () => {
 const initParallax = () => {
   const header = document.querySelector('header');
   if (!header) return;
-  
+
   let ticking = false;
-  
+
   const updateParallax = (scrollPos) => {
     const headerHeight = header.offsetHeight;
     if (scrollPos < headerHeight) {
@@ -309,7 +309,7 @@ const initParallax = () => {
     }
     ticking = false;
   };
-  
+
   window.addEventListener('scroll', () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
@@ -329,10 +329,10 @@ const initSmoothScroll = () => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
       if (href === '#' || href === '#!') return;
-      
+
       e.preventDefault();
       const target = document.querySelector(href);
-      
+
       if (target) {
         const offsetTop = target.offsetTop - 100;
         window.scrollTo({
@@ -350,21 +350,21 @@ const initSmoothScroll = () => {
 
 const initProjectCardEffects = () => {
   const projectCards = document.querySelectorAll('.project-card');
-  
+
   projectCards.forEach(card => {
     // Remove inline styles from your original code
     card.style.transform = '';
-    
+
     // Enhanced hover with gradient position tracking
     card.addEventListener('mouseenter', function() {
       this.style.setProperty('--hover-x', '0%');
     });
-    
+
     card.addEventListener('mousemove', function(e) {
       const rect = this.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
       const y = ((e.clientY - rect.top) / rect.height) * 100;
-      
+
       this.style.setProperty('--hover-x', `${x}%`);
       this.style.setProperty('--hover-y', `${y}%`);
     });
@@ -377,10 +377,10 @@ const initProjectCardEffects = () => {
 
 const checkPerformance = () => {
   // Detect if device is low-end or user prefers reduced motion
-  const isLowEnd = navigator.hardwareConcurrency <= 4 || 
+  const isLowEnd = navigator.hardwareConcurrency <= 4 ||
                    navigator.deviceMemory <= 4 ||
                    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
+
   if (isLowEnd) {
     document.documentElement.style.setProperty('--ease-out-expo', 'ease');
     document.documentElement.style.setProperty('--ease-spring', 'ease');
@@ -394,26 +394,26 @@ const checkPerformance = () => {
 const init = () => {
   // Check performance first
   checkPerformance();
-  
+
   // Core features
   initTheme();
   initSectionNumbers();
   initTypingAnimation();
-  
+
   // Visual enhancements
   initCustomCursor();
   initParallax();
-  
+
   // Scroll animations
   initAOS(); // Try AOS first
   initScrollAnimations(); // Fallback to custom
   initSkillsReveal();
   initTimelineAnimation();
-  
+
   // Interactive effects
   initProjectCardEffects();
   initSmoothScroll();
-  
+
   // Add loaded class to body for CSS hooks
   document.body.classList.add('loaded');
 };
@@ -441,7 +441,7 @@ window.toggleTheme = () => {
 window.setTheme = (theme) => {
   const body = document.body;
   const themeToggleBtn = document.getElementById('theme-toggle');
-  
+
   if (theme === 'dark') {
     body.classList.add('dark');
     themeToggleBtn.textContent = '☀️ Light';
