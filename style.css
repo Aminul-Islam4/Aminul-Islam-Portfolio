@@ -69,17 +69,18 @@ body {
 body::before {
   content: '';
   position: fixed;
-  inset: -10%;
+  inset: -5%;
   z-index: -1;
   background:
     radial-gradient(38% 30% at 20% 15%, var(--accent-tint-strong), transparent 70%),
     radial-gradient(32% 26% at 85% 20%, var(--accent-glow), transparent 70%),
     radial-gradient(36% 30% at 50% 90%, var(--accent-tint), transparent 70%);
   background-repeat: no-repeat;
-  filter: blur(60px);
+  filter: blur(30px);
   opacity: 0.5;
   animation: aurora-drift 22s ease-in-out infinite;
   pointer-events: none;
+  will-change: transform;
 }
 
 @keyframes aurora-drift {
@@ -115,19 +116,18 @@ body::after {
 .cursor-glow {
   position: fixed;
   top: 0; left: 0;
-  width: 460px; height: 460px;
+  width: 340px; height: 340px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-tint-strong), transparent 70%);
-  filter: blur(50px);
+  background: radial-gradient(circle, var(--accent-tint), transparent 70%);
+  filter: blur(30px);
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0;
   opacity: 0;
   transition: opacity 0.5s var(--ease);
-  mix-blend-mode: screen;
   will-change: transform;
 }
-.cursor-glow.active { opacity: 0.7; }
+.cursor-glow.active { opacity: 0.5; }
 body.light .cursor-glow { display: none; }
 
 .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
@@ -208,13 +208,24 @@ html { scrollbar-color: var(--accent) var(--ink); scrollbar-width: thin; }
 }
 
 .photo-ring {
+  position: relative;
   width: 216px;
   height: 216px;
   border-radius: 50%;
-  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
   background: conic-gradient(from 180deg, var(--accent), var(--accent-tint-strong), var(--accent));
   box-shadow: 0 0 0 8px var(--accent-tint), 0 20px 50px rgba(0, 0, 0, 0.4);
   animation: ring-pulse 4s ease-in-out infinite, ring-hue 10s linear infinite;
+  z-index: 0;
 }
 
 @keyframes ring-hue {
@@ -229,8 +240,9 @@ html { scrollbar-color: var(--accent) var(--ink); scrollbar-width: thin; }
 
 .photo-frame {
   position: relative;
-  width: 100%;
-  height: 100%;
+  z-index: 1;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid var(--ink);
@@ -358,6 +370,7 @@ main { padding: 1rem 0 4rem; }
 
 .tile {
   position: relative;
+  z-index: 1;
   background:
     radial-gradient(140% 140% at 100% 0%, var(--accent-tint) 0%, transparent 55%),
     var(--surface);
