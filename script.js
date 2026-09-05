@@ -67,11 +67,98 @@ const initTypingAnimation = () => {
 };
 
 // ============================================================
+// STAGGERED SCROLL REVEAL
+// ============================================================
+const initScrollReveal = () => {
+  const items = document.querySelectorAll('.reveal');
+  if (!items.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    items.forEach(el => el.classList.add('in-view'));
+    return;
+  }
+
+  let sameRowIndex = 0;
+  let lastTop = null;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const top = Math.round(el.getBoundingClientRect().top / 40);
+        sameRowIndex = top === lastTop ? sameRowIndex + 1 : 0;
+        lastTop = top;
+        const delay = Math.min(sameRowIndex * 90, 270);
+        el.style.transitionDelay = `${delay}ms`;
+        el.classList.add('in-view');
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  items.forEach(el => observer.observe(el));
+};
+
+// ============================================================
+// COUNT-UP NUMBERS (inside the highlights tile)
+// ============================================================
+const initCountUp = () => {
+  const targets = document.querySelectorAll('[data-count]');
+  if (!targets.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const animate = (el) => {
+    const end = parseInt(el.getAttribute('data-count'), 10);
+    if (prefersReduced) { el.textContent = end; return; }
+    const duration = 900;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * end);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animate(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  targets.forEach(el => observer.observe(el));
+};
+
+// ============================================================
+// CURSOR SPOTLIGHT ON TILES
+// ============================================================
+const initTileSpotlight = () => {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+  const tiles = document.querySelectorAll('.tile');
+  tiles.forEach(tile => {
+    tile.addEventListener('mousemove', (e) => {
+      const rect = tile.getBoundingClientRect();
+      tile.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+      tile.style.setProperty('--my', `${e.clientY - rect.top}px`);
+    });
+  });
+};
+
+// ============================================================
 // INIT
 // ============================================================
 const init = () => {
   initTheme();
   initTypingAnimation();
+  initScrollReveal();
+  initCountUp();
+  initTileSpotlight();
   document.body.classList.add('loaded');
 };
 
