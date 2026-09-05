@@ -224,10 +224,45 @@ const initScrollProgress = () => {
 };
 
 // ============================================================
+// HEADLINE WORD-BY-WORD REVEAL
+// ============================================================
+const initHeadlineReveal = () => {
+  const el = document.getElementById('hero-name');
+  if (!el) return;
+  const words = el.textContent.trim().split(/\s+/);
+  el.innerHTML = words
+    .map((word, i) => `<span class="gradient-text" style="animation-delay:${0.15 + i * 0.12}s, ${1.4 + i * 0.12}s">${word}</span>`)
+    .join(' ');
+};
+
+// ============================================================
+// SCROLL PARALLAX ON HERO PHOTO
+// ============================================================
+const initParallax = () => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const photo = document.querySelector('.hero-photo');
+  if (!photo) return;
+
+  let ticking = false;
+  const update = () => {
+    const y = window.scrollY;
+    photo.style.transform = `translateY(${y * 0.15}px)`;
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  });
+};
+
+// ============================================================
 // INIT
 // ============================================================
 const init = () => {
   initTheme();
+  initHeadlineReveal();
   initTypingAnimation();
   initScrollReveal();
   initCountUp();
@@ -235,6 +270,7 @@ const init = () => {
   initCardTilt();
   initMagneticButtons();
   initScrollProgress();
+  initParallax();
   document.body.classList.add('loaded');
 };
 
