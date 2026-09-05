@@ -31,6 +31,13 @@ const initTheme = () => {
     const y = window.scrollY;
     window.scrollTo({ top: y + 1, behavior: 'instant' });
     requestAnimationFrame(() => window.scrollTo({ top: y, behavior: 'instant' }));
+
+    // Mirrors what manually pinch-zooming does: forces the browser to
+    // fully recompute and recomposite every layer, not just the ones it
+    // thinks changed. Change is too small to be visible.
+    const root = document.documentElement;
+    root.style.zoom = '0.99999';
+    requestAnimationFrame(() => { root.style.zoom = '1'; });
   }
 };
 
