@@ -29,8 +29,8 @@ const initTheme = () => {
   // recomposition immediately, without any visible jump.
   function forceRepaint() {
     const y = window.scrollY;
-    window.scrollTo(0, y + 1);
-    requestAnimationFrame(() => window.scrollTo(0, y));
+    window.scrollTo({ top: y + 1, behavior: 'instant' });
+    requestAnimationFrame(() => window.scrollTo({ top: y, behavior: 'instant' }));
   }
 };
 
