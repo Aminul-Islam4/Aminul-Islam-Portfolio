@@ -19,9 +19,18 @@ const initTheme = () => {
   function applyTheme(theme) {
     body.classList.toggle('light', theme === 'light');
     label.textContent = theme === 'light' ? 'Dark' : 'Light';
-    // Force an immediate repaint so fixed/blurred layers don't stay stale
-    // until the next scroll or resize (a known compositing quirk).
-    void body.offsetHeight;
+    forceRepaint();
+  }
+
+  // iOS Safari (and some other mobile browsers) only recomposite
+  // position:fixed layers on an actual scroll event — a CSS-variable-driven
+  // color change elsewhere can leave them visually stale otherwise.
+  // Nudging the scroll position by a pixel and back triggers that
+  // recomposition immediately, without any visible jump.
+  function forceRepaint() {
+    const y = window.scrollY;
+    window.scrollTo(0, y + 1);
+    requestAnimationFrame(() => window.scrollTo(0, y));
   }
 };
 
