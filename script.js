@@ -151,6 +151,79 @@ const initTileSpotlight = () => {
 };
 
 // ============================================================
+// 3D TILT ON PROJECT CARDS
+// ============================================================
+const initCardTilt = () => {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const cards = document.querySelectorAll('.project');
+  const maxTilt = 6;
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width;
+      const py = (e.clientY - rect.top) / rect.height;
+      const rotateY = (px - 0.5) * maxTilt * 2;
+      const rotateX = (0.5 - py) * maxTilt * 2;
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)';
+    });
+  });
+};
+
+// ============================================================
+// MAGNETIC BUTTONS
+// ============================================================
+const initMagneticButtons = () => {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const buttons = document.querySelectorAll('.btn');
+  const strength = 0.35;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) * strength;
+      const y = (e.clientY - rect.top - rect.height / 2) * strength;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+};
+
+// ============================================================
+// SCROLL PROGRESS BAR
+// ============================================================
+const initScrollProgress = () => {
+  const bar = document.querySelector('.scroll-progress');
+  if (!bar) return;
+
+  let ticking = false;
+  const update = () => {
+    const scrollTop = window.scrollY;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = height > 0 ? (scrollTop / height) * 100 : 0;
+    bar.style.width = `${pct}%`;
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  });
+  update();
+};
+
+// ============================================================
 // INIT
 // ============================================================
 const init = () => {
@@ -159,6 +232,9 @@ const init = () => {
   initScrollReveal();
   initCountUp();
   initTileSpotlight();
+  initCardTilt();
+  initMagneticButtons();
+  initScrollProgress();
   document.body.classList.add('loaded');
 };
 
