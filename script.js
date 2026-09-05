@@ -258,6 +258,34 @@ const initParallax = () => {
 };
 
 // ============================================================
+// AMBIENT CURSOR-FOLLOW GLOW (decorative, dark mode only)
+// ============================================================
+const initCursorGlow = () => {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const glow = document.querySelector('.cursor-glow');
+  if (!glow) return;
+
+  let targetX = window.innerWidth / 2, targetY = window.innerHeight / 2;
+  let x = targetX, y = targetY;
+
+  window.addEventListener('mousemove', (e) => {
+    targetX = e.clientX;
+    targetY = e.clientY;
+    glow.classList.add('active');
+  });
+
+  const animate = () => {
+    x += (targetX - x) * 0.12;
+    y += (targetY - y) * 0.12;
+    glow.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+    requestAnimationFrame(animate);
+  };
+  animate();
+};
+
+// ============================================================
 // INIT
 // ============================================================
 const init = () => {
@@ -271,6 +299,7 @@ const init = () => {
   initMagneticButtons();
   initScrollProgress();
   initParallax();
+  initCursorGlow();
   document.body.classList.add('loaded');
 };
 
