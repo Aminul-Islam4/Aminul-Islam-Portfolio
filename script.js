@@ -1,29 +1,29 @@
 // ============================================================
-// THEME TOGGLE
+// THEME TOGGLE (dark is default/base; toggling adds .light)
 // ============================================================
 const initTheme = () => {
   const btn = document.getElementById('theme-toggle');
   const label = btn.querySelector('.toggle-label');
   const body = document.body;
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
 
-  const saved = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
+  const saved = localStorage.getItem('theme') || (prefersLight.matches ? 'light' : 'dark');
   applyTheme(saved);
 
   btn.addEventListener('click', () => {
-    const next = body.classList.contains('dark') ? 'light' : 'dark';
+    const next = body.classList.contains('light') ? 'dark' : 'light';
     applyTheme(next);
     localStorage.setItem('theme', next);
   });
 
   function applyTheme(theme) {
-    body.classList.toggle('dark', theme === 'dark');
-    label.textContent = theme === 'dark' ? 'Light' : 'Dark';
+    body.classList.toggle('light', theme === 'light');
+    label.textContent = theme === 'light' ? 'Dark' : 'Light';
   }
 };
 
 // ============================================================
-// TYPING EFFECT — role descriptions
+// TYPING EFFECT
 // ============================================================
 const initTypingAnimation = () => {
   const el = document.querySelector('.dynamic-typing');
