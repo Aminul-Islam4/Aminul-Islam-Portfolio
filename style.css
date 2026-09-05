@@ -464,13 +464,88 @@ main { padding: 1rem 0 4rem; }
 .project-link i { font-size: 0.7rem; }
 .project-link:hover { text-decoration: underline; }
 
-/* Education tile */
-.timeline { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
-.timeline li { display: grid; grid-template-columns: 70px 1fr; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
-.timeline li:last-child { border-bottom: none; padding-bottom: 0; }
-.tl-year { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); padding-top: 0.2rem; }
-.tl-body { display: flex; flex-direction: column; gap: 0.15rem; font-size: 0.9rem; color: var(--text-muted); }
-.tl-body strong { font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: var(--text); }
+/* Education tile — connected vertical timeline */
+.timeline {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline li {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.75rem;
+}
+.timeline li:last-child { padding-bottom: 0; }
+
+.timeline li:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 38px;
+  bottom: -6px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-tint-strong), transparent);
+}
+
+.tl-marker {
+  flex-shrink: 0;
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--accent);
+  font-size: 0.9rem;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.timeline li:hover .tl-marker {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 0 0 6px var(--accent-tint);
+  transform: scale(1.08);
+}
+
+.tl-content { flex: 1; padding-top: 0.2rem; }
+
+.tl-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tl-top strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.tl-year {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  background: var(--accent-tint);
+  border: 1px solid var(--accent-tint-strong);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.tl-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
 
 /* Contact tile */
 .tile-contact { background: var(--surface-2); }
