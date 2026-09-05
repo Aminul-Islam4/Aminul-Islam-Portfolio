@@ -72,15 +72,13 @@ body::before {
   inset: -5%;
   z-index: -1;
   background:
-    radial-gradient(38% 30% at 20% 15%, var(--accent-tint-strong), transparent 70%),
-    radial-gradient(32% 26% at 85% 20%, var(--accent-glow), transparent 70%),
-    radial-gradient(36% 30% at 50% 90%, var(--accent-tint), transparent 70%);
+    radial-gradient(35% 28% at 20% 15%, var(--accent-tint-strong), transparent 75%),
+    radial-gradient(30% 24% at 85% 20%, var(--accent-glow), transparent 75%),
+    radial-gradient(34% 28% at 50% 90%, var(--accent-tint), transparent 75%);
   background-repeat: no-repeat;
-  filter: blur(30px);
-  opacity: 0.5;
+  opacity: 0.55;
   animation: aurora-drift 22s ease-in-out infinite;
   pointer-events: none;
-  will-change: transform;
 }
 
 @keyframes aurora-drift {
@@ -116,18 +114,17 @@ body::after {
 .cursor-glow {
   position: fixed;
   top: 0; left: 0;
-  width: 340px; height: 340px;
+  width: 380px; height: 380px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-tint), transparent 70%);
-  filter: blur(30px);
+  background: radial-gradient(circle, var(--accent-light) 0%, var(--accent-tint-strong) 30%, transparent 72%);
+  filter: blur(14px);
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0;
   opacity: 0;
   transition: opacity 0.5s var(--ease);
-  will-change: transform;
 }
-.cursor-glow.active { opacity: 0.5; }
+.cursor-glow.active { opacity: 0.4; }
 body.light .cursor-glow { display: none; }
 
 .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
