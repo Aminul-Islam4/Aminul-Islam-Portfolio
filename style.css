@@ -65,6 +65,29 @@ body {
   position: relative;
 }
 
+/* Aurora — slow living gradient wash behind the whole page */
+body::before {
+  content: '';
+  position: fixed;
+  inset: -10%;
+  z-index: -1;
+  background:
+    radial-gradient(38% 30% at 20% 15%, var(--accent-tint-strong), transparent 70%),
+    radial-gradient(32% 26% at 85% 20%, var(--accent-glow), transparent 70%),
+    radial-gradient(36% 30% at 50% 90%, var(--accent-tint), transparent 70%);
+  background-repeat: no-repeat;
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: aurora-drift 22s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes aurora-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-3%, 2%) scale(1.06); }
+  66% { transform: translate(2%, -3%) scale(1.03); }
+}
+
 /* Subtle grain for depth */
 body::after {
   content: '';
@@ -89,6 +112,17 @@ body::after {
 }
 
 .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--accent), var(--accent-light));
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent-light); }
+html { scrollbar-color: var(--accent) var(--ink); scrollbar-width: thin; }
 
 .skip-link {
   position: absolute; left: -999px; top: 0;
@@ -146,6 +180,7 @@ body::after {
 .hero-photo {
   animation: rise 0.7s var(--ease) backwards;
   margin-bottom: 1.75rem;
+  will-change: transform;
 }
 
 @keyframes rise {
@@ -205,17 +240,23 @@ body::after {
   letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
   max-width: 16ch;
-  animation: rise 0.7s 0.18s var(--ease) backwards;
 }
 
 .gradient-text {
+  display: inline-block;
   background: linear-gradient(100deg, var(--text) 20%, var(--accent) 50%, var(--text) 80%);
   background-size: 220% auto;
   background-position: 0% center;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: rise 0.7s 0.18s var(--ease) backwards, shimmer 6s ease-in-out infinite 1.2s;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: word-rise 0.7s var(--ease) forwards, shimmer 6s ease-in-out infinite 1.4s;
+}
+
+@keyframes word-rise {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes shimmer {
@@ -462,6 +503,15 @@ main { padding: 1rem 0 4rem; }
 .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.65rem; }
 .project-top h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.005em; }
 
+.cover-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+.project--live .cover-bar { background: linear-gradient(90deg, var(--accent), var(--accent-light)); }
+.project--muted .cover-bar { background: linear-gradient(90deg, var(--line-strong), transparent); }
+
 .chip {
   flex-shrink: 0; font-family: var(--font-mono); font-size: 0.7rem;
   padding: 0.3rem 0.65rem; border-radius: 999px; border: 1px solid transparent;
@@ -616,4 +666,6 @@ footer p { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-
   .reveal { opacity: 1; transform: none; }
   .photo-ring { animation: none; }
   .project.span-2 { animation: none; }
+  body::before { animation: none; }
+  .gradient-text { animation: none; opacity: 1; transform: none; }
 }
