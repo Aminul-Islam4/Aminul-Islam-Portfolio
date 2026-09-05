@@ -25,43 +25,42 @@
 </button>
 
 <header class="hero">
-  <div class="container hero-grid">
-
-    <div class="hero-text">
-      <span class="status-pill">
-        <span class="status-dot" aria-hidden="true"></span>
-        Open to QA Engineer roles
-      </span>
-
-      <h1>Aminul Islam<br>Aymon</h1>
-
-      <p class="role-line"><span class="dynamic-typing"></span></p>
-
-      <div class="cta-row">
-        <a class="btn btn-solid" href="mailto:aminul.edu123@gmail.com">
-          <i class="fas fa-envelope"></i> Email me
-        </a>
-        <a class="btn btn-ghost" href="https://github.com/Aminul-Islam4" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a class="btn btn-ghost" href="https://linkedin.com/in/aymon123" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-      </div>
-    </div>
+  <div class="container hero-inner">
 
     <div class="hero-photo">
-      <div class="photo-frame">
-        <img
-          src="profile.jpg.JPG"
-          alt="Aminul Islam Aymon"
-          class="avatar"
-          onerror="this.style.display='none'; document.querySelector('.avatar-fallback').style.display='flex';"
-        />
-        <div class="avatar-fallback">AI</div>
+      <div class="photo-ring">
+        <div class="photo-frame">
+          <img
+            src="profile.jpg.JPG"
+            alt="Aminul Islam Aymon"
+            class="avatar"
+            onerror="this.style.display='none'; document.querySelector('.avatar-fallback').style.display='flex';"
+          />
+          <div class="avatar-fallback">AI</div>
+        </div>
       </div>
     </div>
 
+    <span class="status-pill">
+      <span class="status-dot" aria-hidden="true"></span>
+      Open to QA Engineer roles
+    </span>
+
+    <h1>Aminul Islam Aymon</h1>
+
+    <p class="role-line"><span class="dynamic-typing"></span></p>
+
+    <div class="cta-row">
+      <a class="btn btn-solid" href="mailto:aminul.edu123@gmail.com">
+        <i class="fas fa-envelope"></i> Email me
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/Aminul-Islam4" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/aymon123" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
   </div>
 </header>
 
@@ -70,7 +69,7 @@
 
     <div class="bento">
 
-      <section class="tile tile-about span-2">
+      <section class="tile tile-about span-2 reveal">
         <span class="tile-label">Summary</span>
         <p>
           Computer Science graduate from BRAC University with hands-on experience in Software Quality Assurance,
@@ -81,23 +80,32 @@
         </p>
       </section>
 
-      <section class="tile tile-stats">
-        <span class="tile-label">At a glance</span>
-        <div class="stat">
-          <span class="stat-num">22+</span>
-          <span class="stat-label">test cases executed on the AI assessment portal</span>
+      <section class="tile tile-stats reveal">
+        <span class="tile-label">Highlights</span>
+        <div class="highlight">
+          <i class="fas fa-flask" aria-hidden="true"></i>
+          <div>
+            <span class="h-num">IEEE</span>
+            <span class="h-label">Published researcher — AIMLA 2025</span>
+          </div>
         </div>
-        <div class="stat">
-          <span class="stat-num">5</span>
-          <span class="stat-label">testing &amp; automation projects</span>
+        <div class="highlight">
+          <i class="fas fa-diagram-project" aria-hidden="true"></i>
+          <div>
+            <span class="h-num" data-count="5">0</span>
+            <span class="h-label">QA &amp; automation projects</span>
+          </div>
         </div>
-        <div class="stat">
-          <span class="stat-num">IEEE</span>
-          <span class="stat-label">published research, AIMLA 2025</span>
+        <div class="highlight">
+          <i class="fas fa-toolbox" aria-hidden="true"></i>
+          <div>
+            <span class="h-num"><span data-count="4">0</span>+</span>
+            <span class="h-label">Testing tools &amp; frameworks</span>
+          </div>
         </div>
       </section>
 
-      <section class="tile tile-skills span-3">
+      <section class="tile tile-skills span-3 reveal">
         <span class="tile-label">Skills</span>
         <div class="skills-grid">
           <div class="skill-col">
@@ -129,9 +137,9 @@
         </div>
       </section>
 
-      <h2 class="section-title span-3">Projects</h2>
+      <h2 class="section-title span-3 reveal">Projects</h2>
 
-      <article class="tile project span-2">
+      <article class="tile project span-2 reveal">
         <div class="project-top">
           <h3>AI-Powered Academic Assessment Portal</h3>
           <span class="chip chip-live">Repo</span>
@@ -141,7 +149,7 @@
         <a class="project-link" href="https://github.com/Aminul-Islam4/AI-enhanced-Quiz-Platform" target="_blank" rel="noopener noreferrer">View repository <i class="fas fa-arrow-up-right-from-square"></i></a>
       </article>
 
-      <article class="tile project">
+      <article class="tile project reveal">
         <div class="project-top">
           <h3>Bug Tracking &amp; Management System</h3>
           <span class="chip chip-live">Repo</span>
@@ -151,7 +159,7 @@
         <a class="project-link" href="https://github.com/Aminul-Islam4/Bug-Tracker" target="_blank" rel="noopener noreferrer">View repository <i class="fas fa-arrow-up-right-from-square"></i></a>
       </article>
 
-      <article class="tile project">
+      <article class="tile project reveal">
         <div class="project-top">
           <h3>Plant Disease Detection</h3>
           <span class="chip chip-live">Repo</span>
@@ -161,7 +169,7 @@
         <a class="project-link" href="https://github.com/Aminul-Islam4/Plant-Disease-Detection" target="_blank" rel="noopener noreferrer">View repository <i class="fas fa-arrow-up-right-from-square"></i></a>
       </article>
 
-      <article class="tile project span-2">
+      <article class="tile project span-2 reveal">
         <div class="project-top">
           <h3>API Automation Testing — User Management</h3>
           <span class="chip chip-muted">Private</span>
@@ -170,7 +178,7 @@
         <div class="tag-row"><span>Playwright API</span><span>Postman</span><span>Python</span></div>
       </article>
 
-      <article class="tile project">
+      <article class="tile project reveal">
         <div class="project-top">
           <h3>Automation Practice</h3>
           <span class="chip chip-muted">Private</span>
@@ -179,7 +187,7 @@
         <div class="tag-row"><span>Selenium</span><span>Postman</span></div>
       </article>
 
-      <section class="tile tile-education span-2">
+      <section class="tile tile-education span-2 reveal">
         <span class="tile-label">Education</span>
         <ol class="timeline">
           <li>
@@ -197,13 +205,13 @@
         </ol>
       </section>
 
-      <section class="tile tile-research">
+      <section class="tile tile-research reveal">
         <span class="tile-label">Research</span>
         <p><strong>CNN vs RNN for Bangla Handwritten Character Recognition.</strong> Contributed to experimental validation and accuracy comparison. Published in IEEE, AIMLA 2025.</p>
         <a class="project-link" href="https://ieeexplore.ieee.org/abstract/document/11041447" target="_blank" rel="noopener noreferrer">Read publication <i class="fas fa-arrow-up-right-from-square"></i></a>
       </section>
 
-      <section class="tile tile-contact span-3">
+      <section class="tile tile-contact span-3 reveal">
         <span class="tile-label">Contact</span>
         <div class="contact-cta">
           <p>Open to QA Engineer opportunities — let's talk.</p>
