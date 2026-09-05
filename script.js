@@ -19,6 +19,9 @@ const initTheme = () => {
   function applyTheme(theme) {
     body.classList.toggle('light', theme === 'light');
     label.textContent = theme === 'light' ? 'Dark' : 'Light';
+    // Force an immediate repaint so fixed/blurred layers don't stay stale
+    // until the next scroll or resize (a known compositing quirk).
+    void body.offsetHeight;
   }
 };
 
