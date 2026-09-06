@@ -1,47 +1,4 @@
 // ============================================================
-// THEME TOGGLE (dark is default/base; toggling adds .light)
-// ============================================================
-const initTheme = () => {
-  const btn = document.getElementById('theme-toggle');
-  const label = btn.querySelector('.toggle-label');
-  const body = document.body;
-  const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
-
-  const saved = localStorage.getItem('theme') || (prefersLight.matches ? 'light' : 'dark');
-  applyTheme(saved);
-
-  btn.addEventListener('click', () => {
-    const next = body.classList.contains('light') ? 'dark' : 'light';
-    applyTheme(next);
-    localStorage.setItem('theme', next);
-  });
-
-  function applyTheme(theme) {
-    body.classList.toggle('light', theme === 'light');
-    label.textContent = theme === 'light' ? 'Dark' : 'Light';
-    forceRepaint();
-  }
-
-  // iOS Safari (and some other mobile browsers) only recomposite
-  // position:fixed layers on an actual scroll event — a CSS-variable-driven
-  // color change elsewhere can leave them visually stale otherwise.
-  // Nudging the scroll position by a pixel and back triggers that
-  // recomposition immediately, without any visible jump.
-  function forceRepaint() {
-    const y = window.scrollY;
-    window.scrollTo({ top: y + 1, behavior: 'instant' });
-    requestAnimationFrame(() => window.scrollTo({ top: y, behavior: 'instant' }));
-
-    // Mirrors what manually pinch-zooming does: forces the browser to
-    // fully recompute and recomposite every layer, not just the ones it
-    // thinks changed. Change is too small to be visible.
-    const root = document.documentElement;
-    root.style.zoom = '0.99999';
-    requestAnimationFrame(() => { root.style.zoom = '1'; });
-  }
-};
-
-// ============================================================
 // TYPING EFFECT
 // ============================================================
 const initTypingAnimation = () => {
@@ -137,7 +94,12 @@ const initCountUp = () => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       el.textContent = Math.round(eased * end);
-      if (progress < 1) requestAnimationFrame(step);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.classList.add('count-landed');
+        setTimeout(() => el.classList.remove('count-landed'), 700);
+      }
     };
     requestAnimationFrame(step);
   };
@@ -155,73 +117,11 @@ const initCountUp = () => {
 };
 
 // ============================================================
-// CURSOR SPOTLIGHT ON TILES
-// ============================================================
-const initTileSpotlight = () => {
-  if (!window.matchMedia('(pointer: fine)').matches) return;
-  const tiles = document.querySelectorAll('.tile');
-  tiles.forEach(tile => {
-    tile.addEventListener('mousemove', (e) => {
-      const rect = tile.getBoundingClientRect();
-      tile.style.setProperty('--mx', `${e.clientX - rect.left}px`);
-      tile.style.setProperty('--my', `${e.clientY - rect.top}px`);
-    });
-  });
-};
-
-// ============================================================
-// 3D TILT ON PROJECT CARDS
-// ============================================================
-const initCardTilt = () => {
-  if (!window.matchMedia('(pointer: fine)').matches) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const cards = document.querySelectorAll('.project');
-  const maxTilt = 6;
-
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const px = (e.clientX - rect.left) / rect.width;
-      const py = (e.clientY - rect.top) / rect.height;
-      const rotateY = (px - 0.5) * maxTilt * 2;
-      const rotateX = (0.5 - py) * maxTilt * 2;
-      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)';
-    });
-  });
-};
-
-// ============================================================
-// MAGNETIC BUTTONS
-// ============================================================
-const initMagneticButtons = () => {
-  if (!window.matchMedia('(pointer: fine)').matches) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const buttons = document.querySelectorAll('.btn');
-  const strength = 0.35;
-
-  buttons.forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = (e.clientX - rect.left - rect.width / 2) * strength;
-      const y = (e.clientY - rect.top - rect.height / 2) * strength;
-      btn.style.transform = `translate(${x}px, ${y}px)`;
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'translate(0, 0)';
-    });
-  });
-};
-
-// ============================================================
 // SCROLL PROGRESS BAR
 // ============================================================
 const initScrollProgress = () => {
   const bar = document.querySelector('.scroll-progress');
+  const backToTop = document.getElementById('back-to-top');
   if (!bar) return;
 
   let ticking = false;
@@ -230,6 +130,7 @@ const initScrollProgress = () => {
     const height = document.documentElement.scrollHeight - window.innerHeight;
     const pct = height > 0 ? (scrollTop / height) * 100 : 0;
     bar.style.width = `${pct}%`;
+    if (backToTop) backToTop.classList.toggle('visible', scrollTop > 600);
     ticking = false;
   };
 
@@ -240,6 +141,12 @@ const initScrollProgress = () => {
     }
   });
   update();
+
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 };
 
 // ============================================================
@@ -250,7 +157,7 @@ const initHeadlineReveal = () => {
   if (!el) return;
   const words = el.textContent.trim().split(/\s+/);
   el.innerHTML = words
-    .map((word, i) => `<span class="gradient-text" style="animation-delay:${0.15 + i * 0.12}s, ${1.4 + i * 0.12}s">${word}</span>`)
+    .map((word, i) => `<span class="gradient-text" style="animation-delay:${0.3 + i * 0.12}s, ${1.4 + i * 0.12}s">${word}</span>`)
     .join(' ');
 };
 
@@ -277,48 +184,34 @@ const initParallax = () => {
 };
 
 // ============================================================
-// AMBIENT CURSOR-FOLLOW GLOW (decorative, dark mode only)
+// SCROLL DEPTH SHADOW (cheap: IntersectionObserver, not scroll-driven)
 // ============================================================
-const initCursorGlow = () => {
-  if (!window.matchMedia('(pointer: fine)').matches) return;
+const initDepthShadow = () => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const tiles = document.querySelectorAll('.tile');
+  if (!tiles.length) return;
 
-  const glow = document.querySelector('.cursor-glow');
-  if (!glow) return;
+  const thresholds = Array.from({ length: 11 }, (_, i) => i / 10);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.target.style.setProperty('--depth', entry.intersectionRatio.toFixed(2));
+    });
+  }, { threshold: thresholds });
 
-  let targetX = window.innerWidth / 2, targetY = window.innerHeight / 2;
-  let x = targetX, y = targetY;
-
-  window.addEventListener('mousemove', (e) => {
-    targetX = e.clientX;
-    targetY = e.clientY;
-    glow.classList.add('active');
-  });
-
-  const animate = () => {
-    x += (targetX - x) * 0.12;
-    y += (targetY - y) * 0.12;
-    glow.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animate);
-  };
-  animate();
+  tiles.forEach(tile => observer.observe(tile));
 };
 
 // ============================================================
 // INIT
 // ============================================================
 const init = () => {
-  initTheme();
   initHeadlineReveal();
   initTypingAnimation();
   initScrollReveal();
   initCountUp();
-  initTileSpotlight();
-  initCardTilt();
-  initMagneticButtons();
   initScrollProgress();
   initParallax();
-  initCursorGlow();
+  initDepthShadow();
   document.body.classList.add('loaded');
 };
 
